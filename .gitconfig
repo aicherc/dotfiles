@@ -1,0 +1,8 @@
+[user]
+	name = Christopher Aicher
+	email = aicherc@uw.edu
+[core]
+	editor = vim
+	excludesfile = /home/aicherc/.gitignore
+[credential]
+	helper = cache
