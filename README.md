@@ -23,15 +23,19 @@ WARNING: this is untested currently.
 * Dropbox
 * R + RStudio
 * solarized colorscheme for terminal [link](https://github.com/Anthony25/gnome-terminal-colors-solarized)
+* neovim
+* Install neovim python module
 
 
-## VIM Plug-in Notes
-Use Vundle
+## VIM + NEOVIM Plug-in Notes
+Use Vundle for vim.
+Use vim-plug for neovim.
+
 
 ### YouCompleteMe
-YCM is a code completion engine for Vim.
+YCM is a code completion engine for Vim and NeoVim.
 It has a compiled component that requires a few steps to install.
-See [link](https://github.com/Valloric/YouCompleteMe) for more detials.
+See [link](https://github.com/Valloric/YouCompleteMe) for more details.
 
 
 

@@ -116,4 +116,9 @@ if ! shopt -oq posix; then
 fi
 
 source ~/.bash_prompt
-export PATH=/home/aicherc/anaconda2/bin:$PATH
+
+if [ -z ${CONDA_ENV_PATH+x} ];
+then
+  export PATH=/home/aicherc/anaconda2/bin:$PATH;
+fi;
+
