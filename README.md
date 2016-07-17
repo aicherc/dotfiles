@@ -13,8 +13,8 @@ For more details on managing dotfiles this way see
 
 ## Installation on a New System
 
-Download and run the following script [link](https://gist.github.com/aicherc/8fd82fd29549135194bed3aa7d2d6484#file-dotfiles_install-sh)
-WARNING: this is untested currently.
+Download and run the following script [link](https://gist.github.com/aicherc/8fd82fd29549135194bed3aa7d2d6484#file-dotfiles_install-sh).
+Don't forget to add permission to the file with `chmod +x`
 
 ### Other Things to Install First
 * Git
@@ -26,11 +26,11 @@ WARNING: this is untested currently.
 
 
 ## VIM Plug-in Notes
-Use Vundle
+Use Vundle [link](https://github.com/VundleVim/Vundle.vim)
 
 ### YouCompleteMe
 YCM is a code completion engine for Vim.
-It has a compiled component that requires a few steps to install.
+It has a compiled component that requires a few steps to install (including installing cmake + python-dev tools).
 See [link](https://github.com/Valloric/YouCompleteMe) for more detials.
 
 
