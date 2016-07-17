@@ -23,18 +23,18 @@ Don't forget to add permission to the file with `chmod +x`
 * Dropbox
 * R + RStudio
 * solarized colorscheme for terminal [link](https://github.com/Anthony25/gnome-terminal-colors-solarized)
-* neovim
-* Install neovim python module
+* neovim [link](https://github.com/neovim/neovim/wiki/Installing-Neovim)
+* Install neovim python modules to Anaconda [link](https://neovim.io/doc/user/provider.html#provider-python)
 
 
 ## VIM + NEOVIM Plug-in Notes
 Use Vundle [link](https://github.com/VundleVim/Vundle.vim) for vim.
 
-Use vim-plug for neovim.
+Use vim-plug for NeoVim [link](https://github.com/junegunn/vim-plug/blob/master/plug.vim).
 
 
 ### YouCompleteMe
 YCM is a code completion engine for Vim and NeoVim.
-It has a compiled component that requires a few steps to install.
+It has a compiled component that requires a few steps to install (including installing cmake).
 See [link](https://github.com/Valloric/YouCompleteMe) for more details.
 
