@@ -117,5 +117,3 @@ fi
 
 source ~/.bash_prompt
 export PATH=/home/aicherc/anaconda2/bin:$PATH
-
-

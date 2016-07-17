@@ -26,22 +26,11 @@ WARNING: this is untested currently.
 
 
 ## VIM Plug-in Notes
-To install a vim-plugin using `git clone [URL to Repo]`
-in the `$/.vim/bundle/` directory,
-instead call `gitdot submodule add [URL to Repo] .vim/bundle/`
-to add the vim-plugin as a submodule
-
-To update vim-plugins call
-```
-$ gitdot submodule foreach git pull origin master
-```
-
-For more details see
-[link](http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/)
+Use Vundle
 
 ### YouCompleteMe
 YCM is a code completion engine for Vim.
-Its Git repository requires additional steps to install.
+It has a compiled component that requires a few steps to install.
 See [link](https://github.com/Valloric/YouCompleteMe) for more detials.
 
 

@@ -2,22 +2,54 @@
 
 " Ward off unexpected things
 set nocompatible
-" Set PATH to default
-
-" Plugin Manager
 filetype off
 
 "---------------------------
-" PATHOGEN Setup
-execute pathogen#infect()
-execute pathogen#helptags()
+" VUNDLE Plugin management
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" vim-colors-solarized
+Plugin 'altercation/vim-colors-solarized'
+
+" nerdtree
+Plugin 'scrooloose/nerdtree'
+
+" vim-pandoc
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
+
+" YouCompleteMe
+Plugin 'Valloric/YouCompleteMe'
+
+
+call vundle#end()
+" Plugin for indents
+filetype plugin indent on
+
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+"---------------------------
 
 "" YCM
-"" let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
+"let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
 "nnoremap <leader>y :let g:ycm_auto_trigger=0<CR>
 "nnoremap <leader>Y :let g:ycm_auto_trigger=1<CR>
+"let g:ycm_server_python_interpreter= '/home/aicherc/anaconda2/bin/python'
+
+" For conda enviroment compatibility:
+let g:ycm_python_binary_path = 'python'
 let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_max_diagnostics_to_display = 0
+let g:ycm_max_diagnostics_to_display = -1
 nnoremap <leader>goto :YcmCompleter GoTo <CR>
 nnoremap ? :YcmCompleter GetDoc <CR>
 
@@ -180,9 +212,6 @@ autocmd FileType cpp,cxx,hpp,c,h setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
 " For Cython Files
 au BufNewFile,BufRead *.pyx set filetype=python
-
-" Plugin for indents
-filetype plugin indent on
 
 " Strip trailing whitespace in code
 fun! <SID>StripTrailingWhitespaces()
