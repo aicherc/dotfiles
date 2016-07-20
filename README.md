@@ -22,6 +22,8 @@ Don't forget to add permission to the file with `chmod +x`
 * Chrome
 * Dropbox
 * R + RStudio
+* LaTeX (`texlive-full` and `texmaker`) [link](https://help.ubuntu.com/community/LaTeX)
+* Pandoc [link](http://pandoc.org/installing.html)
 * solarized colorscheme for terminal [link](https://github.com/Anthony25/gnome-terminal-colors-solarized)
 * neovim [link](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 * Install neovim python modules to Anaconda [link](https://neovim.io/doc/user/provider.html#provider-python)
