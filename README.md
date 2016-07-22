@@ -41,6 +41,9 @@ It has a compiled component that requires a few steps to install (including inst
 See [link](https://github.com/Valloric/YouCompleteMe) for more details.
 
 
+### Markdown Viewing
+Use your favorite browser to view markdown files (Markdown Preview Plus extension seems good)
+
 ### TODO:
 
 * Learn about tags - ctags and taglist for quick code navigation

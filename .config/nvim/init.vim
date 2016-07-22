@@ -179,6 +179,9 @@ endfun
 autocmd FileType c,cpp,hpp,cxx,h,python,java,php
    \ autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
+" .md files are markdown
+au BufNewFile,BufRead *.md set filetype=markdown
+
 "---------------------------
 " Useful Mappings:
 
@@ -198,7 +201,8 @@ nmap <C-c> :bp\|bd#<CR>
 nnoremap ` <C-^>
 
 " NERDTree Shortcut
-nnoremap <C-u> :NERDTree<CR>
+nnoremap <C-u> :NERDTreeToggle<CR>
+" nnoremap <C-U> :NERDTreeCWD<CR>
 
 " Map for ESC
 " imap ;; <Esc>
@@ -225,5 +229,8 @@ autocmd FileType tex nmap <F6> :! evince %:r.pdf > /dev/null 2>&1 & <CR><CR>
 autocmd FileType tex nmap <F7> :w! \| :lcd %:p:h \| :! bibtex %:r.aux <CR><CR>
 autocmd FileType tex setlocal spell spelllang=en_us
 autocmd FileType tex setlocal textwidth=79
+
+" Markdown Shortcuts
+autocmd FileType markdown nmap <F6> :w! \| :! google-chrome --new-window %:p <CR><CR>
 
 
