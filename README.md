@@ -22,6 +22,8 @@ Don't forget to add permission to the file with `chmod +x`
 * Chrome
 * Dropbox
 * R + RStudio
+* LaTeX (`texlive-full` and `texmaker`) [link](https://help.ubuntu.com/community/LaTeX)
+* Pandoc [link](http://pandoc.org/installing.html)
 * solarized colorscheme for terminal [link](https://github.com/Anthony25/gnome-terminal-colors-solarized)
 * neovim [link](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 * Install neovim python modules to Anaconda [link](https://neovim.io/doc/user/provider.html#provider-python)
@@ -38,3 +40,7 @@ YCM is a code completion engine for Vim and NeoVim.
 It has a compiled component that requires a few steps to install (including installing cmake).
 See [link](https://github.com/Valloric/YouCompleteMe) for more details.
 
+
+### TODO:
+
+* Learn about tags - ctags and taglist for quick code navigation
