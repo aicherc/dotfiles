@@ -42,13 +42,13 @@ let g:pandoc#syntax#conceal#use=0
 let g:pandoc#syntax#codeblocks#embeds#langs=["python"]
 
 " NERDTree Preferences
-let NERDTreeQuitOnOpen=1
+" let NERDTreeQuitOnOpen=1
 
 " NeoTerm Preferences
-nnoremap <F10> :TREPLSendFile<CR>
-nnoremap <C-r> :TREPLSend<CR>j 
-vnoremap <C-r> :TREPLSend<CR>
-nnoremap <F9> :Ttoggle<CR>
+autocmd FileType python nnoremap <F10> :TREPLSendFile<CR>
+autocmd FileType python nnoremap <F9> :TREPLSend<CR>j 
+autocmd FileType python vnoremap <F9> :TREPLSend<CR>
+nnoremap <A-n> :Ttoggle<CR>
 
 "---------------------------
 " Essential Options:
@@ -211,17 +211,17 @@ nnoremap <C-u> :NERDTreeToggle<CR>
 " command W w !sudo tee % > /dev/null
 
 " Terminal Mappings
-tnoremap <Esc> <C-\><C-n>
+tnoremap <Esc><Esc> <C-\><C-n>
 
 " Window Mappings
-" nnoremap <A-h> <C-w>h
-" nnoremap <A-j> <C-w>j
-" nnoremap <A-k> <C-w>k
-" nnoremap <A-l> <C-w>l
-" tnoremap <A-h> <C-\><C-n><C-w>h
-" tnoremap <A-j> <C-\><C-n><C-w>j
-" tnoremap <A-k> <C-\><C-n><C-w>k
-" tnoremap <A-l> <C-\><C-n><C-w>l
+tnoremap <A-h> <C-\><C-n><C-w>h
+tnoremap <A-j> <C-\><C-n><C-w>j
+tnoremap <A-k> <C-\><C-n><C-w>k
+tnoremap <A-l> <C-\><C-n><C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
 "---------------------------
 " LaTeX Shortcuts
 autocmd FileType tex nmap <F5> :w! \| :lcd %:p:h \| :! pdflatex -synctex=1 -interaction=nonstopmode %:r.tex <CR> <CR>
