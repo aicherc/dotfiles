@@ -46,7 +46,7 @@ let g:pandoc#syntax#codeblocks#embeds#langs=["python"]
 
 " NeoTerm Preferences
 autocmd FileType python nnoremap <F10> :TREPLSendFile<CR>
-autocmd FileType python nnoremap <F9> :TREPLSend<CR>j 
+autocmd FileType python nnoremap <F9> :TREPLSend<CR>j
 autocmd FileType python vnoremap <F9> :TREPLSend<CR>
 nnoremap <A-n> :Ttoggle<CR>
 
@@ -202,6 +202,7 @@ nnoremap ` <C-^>
 
 " NERDTree Shortcut
 nnoremap <C-u> :NERDTreeToggle<CR>
+nnoremap <A-u> :NERDTreeToggle<CR>
 " nnoremap <C-U> :NERDTreeCWD<CR>
 
 " Map for ESC
