@@ -49,6 +49,7 @@ autocmd FileType python nnoremap <F10> :TREPLSendFile<CR>
 autocmd FileType python nnoremap <F9> :TREPLSend<CR>j
 autocmd FileType python vnoremap <F9> :TREPLSend<CR>
 nnoremap <A-n> :Ttoggle<CR>
+tnoremap <A-n> <C-\><C-n>:Ttoggle<CR>
 
 "---------------------------
 " Essential Options:
@@ -212,7 +213,7 @@ nnoremap <A-u> :NERDTreeToggle<CR>
 " command W w !sudo tee % > /dev/null
 
 " Terminal Mappings
-tnoremap <Esc><Esc> <C-\><C-n>
+tnoremap <C-[> <C-\><C-n>
 
 " Window Mappings
 tnoremap <A-h> <C-\><C-n><C-w>h
@@ -223,6 +224,12 @@ nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
+
+
+" Jump shortcuts
+nnoremap <A-o> <C-o>
+nnoremap <A-i> <C-i>
+
 "---------------------------
 " LaTeX Shortcuts
 autocmd FileType tex nmap <F5> :w! \| :lcd %:p:h \| :! pdflatex -synctex=1 -interaction=nonstopmode %:r.tex <CR> <CR>

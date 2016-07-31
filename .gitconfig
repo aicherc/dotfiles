@@ -2,7 +2,7 @@
 	name = Christopher Aicher
 	email = aicherc@uw.edu
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = /home/aicherc/.gitignore
 [credential]
 	helper = cache

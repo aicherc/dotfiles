@@ -42,8 +42,16 @@ See [link](https://github.com/Valloric/YouCompleteMe) for more details.
 
 
 ### Markdown Viewing
-Use your favorite browser to view markdown files (Markdown Preview Plus extension seems good)
+Use your favorite browser to view markdown files with F6
 
 ### TODO:
 
 * Learn about tags - ctags and taglist for quick code navigation
+ See https://github.com/xolox/vim-easytags and http://vimawesome.com/plugin/tagbar
+* CTRL-P for fuzzy file search http://vimawesome.com/plugin/ctrlp-vim-red
+
+* Git Hooks for .ipynb files
+
+
+
+
