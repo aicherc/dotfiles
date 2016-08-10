@@ -216,7 +216,8 @@ nnoremap <A-u> :NERDTreeToggle<CR>
 " command W w !sudo tee % > /dev/null
 
 " Terminal Mappings
-tnoremap <C-[> <C-\><C-n>
+tnoremap <ESC> <ESC>
+tnoremap <C-\> <C-\><C-n>
 
 " Window Mappings
 tnoremap <A-h> <C-\><C-n><C-w>h
@@ -235,9 +236,9 @@ nnoremap <A-i> <C-i>
 
 "---------------------------
 " LaTeX Shortcuts
-autocmd FileType tex nmap <F5> :w! \| :lcd %:p:h \| :! pdflatex -synctex=1 -interaction=nonstopmode %:r.tex <CR> <CR>
+autocmd FileType tex nmap <F5> :w! \| :T cd %:p:h \| :T pdflatex -synctex=1 -interaction=nonstopmode %:r.tex <CR> <CR>
 autocmd FileType tex nmap <F6> :! evince %:r.pdf > /dev/null 2>&1 & <CR><CR>
-autocmd FileType tex nmap <F7> :w! \| :lcd %:p:h \| :! bibtex %:r.aux <CR><CR>
+autocmd FileType tex nmap <F7> :w! \| :T cd %:p:h \| :T bibtex %:r.aux <CR><CR>
 autocmd FileType tex setlocal spell spelllang=en_us
 autocmd FileType tex setlocal textwidth=79
 
