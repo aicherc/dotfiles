@@ -218,6 +218,7 @@ nnoremap <A-u> :NERDTreeToggle<CR>
 " Terminal Mappings
 tnoremap <ESC> <ESC>
 tnoremap <C-\> <C-\><C-n>
+tnoremap <A-\> <C-\><C-n>
 
 " Window Mappings
 tnoremap <A-h> <C-\><C-n><C-w>h
