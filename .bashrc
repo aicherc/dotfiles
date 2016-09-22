@@ -122,3 +122,5 @@ then
   export PATH=/home/aicherc/anaconda2/bin:$PATH;
 fi;
 
+# Enable bashrc from ssh
+shopt -s expand_aliases
