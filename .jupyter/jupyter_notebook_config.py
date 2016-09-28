@@ -547,10 +547,10 @@ def scrub_output_pre_save(model, **kwargs):
     for cell in model['content']['cells']:
         if cell['cell_type'] != 'code':
             continue
-        cell['outputs'] = []
+#        cell['outputs'] = [] # Don't delete outputs
         cell['execution_count'] = None
 
-#c.FileContentsManager.pre_save_hook = scrub_output_pre_save
+c.FileContentsManager.pre_save_hook = scrub_output_pre_save
 
 import io
 import os
