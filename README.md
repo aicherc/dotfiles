@@ -31,8 +31,16 @@ Don't forget to add permission to the file with `chmod +x`
 
 ## VIM + NEOVIM Plug-in Notes
 Use Vundle [link](https://github.com/VundleVim/Vundle.vim) for vim.
+```
+$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+$ vim +PluginInstall +qall
+```
+Note that vim must be built with python for YouCompleteMe to work.
+YouCompleteMe also has additional installation steps (see below).
 
 Use vim-plug for NeoVim [link](https://github.com/junegunn/vim-plug/blob/master/plug.vim).
+Open up `nvim` and call `:PlugInstall`.
+YouCompleteMe also has additional installation steps (see below).
 
 
 ### YouCompleteMe
