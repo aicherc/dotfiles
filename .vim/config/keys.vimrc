@@ -1,10 +1,3 @@
-" My vimrc settings
-
-source $HOME/.vim/config/init.vimrc
-source $HOME/.vim/config/plugins.vimrc
-source $HOME/.vim/config/general.vimrc
-source $HOME/.vim/config/keys.vimrc
-
 "---------------------------
 " Useful Mappings:
 
@@ -17,23 +10,32 @@ nnoremap <C-L> :nohl<CR><C-L>
 " Toggle Spell Check with <C-T>
 nnoremap <C-T> :setlocal spell! spelllang=en_us<CR>
 
-" Kill Buffer (without closing window)
-nmap <C-c> :bp\|bd#<CR>
-
 " Swap with previous buffer
 nnoremap ` <C-^>
 
 " NERDTree Shortcut
-nnoremap <C-u> :NERDTree<CR>
+nnoremap <C-u> :NERDTreeToggle<CR>
+
+execute "set <M-u>=\eu"
+nnoremap <M-u> :NERDTreeToggle<CR>
 
 " Map for ESC
 " imap ;; <Esc>
 
 " Map for window traversal
-" nmap <ALT-k> :wincmd k<CR>
-" nmap <ALT-j> :wincmd j<CR>
-" nmap <ALT-h> :wincmd h<CR>
-" nmap <ALT-l> :wincmd l<CR>
+execute "set <M-h>=\eh"
+nnoremap <M-h> <C-w>h
+execute "set <M-j>=\ej"
+nnoremap <M-j> <C-w>j
+execute "set <M-k>=\ek"
+nnoremap <M-k> <C-w>k
+execute "set <M-l>=\el"
+nnoremap <M-l> <C-w>l
+
+" Jump shortcuts
+nnoremap <A-o> <C-o>
+nnoremap <A-i> <C-i>
+
 
 " Sudo Write
 " command W w !sudo tee % > /dev/null
@@ -46,5 +48,5 @@ autocmd FileType tex nmap <F7> :w! \| :lcd %:p:h \| :! bibtex %:r.aux <CR><CR>
 autocmd FileType tex setlocal spell spelllang=en_us
 autocmd FileType tex setlocal textwidth=79
 
-
-
+" Markdown Shortcut
+autocmd FileType markdown nmap <F6> :w! \| :! google-chrome --new-window %:p <CR><CR>
