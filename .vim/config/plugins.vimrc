@@ -27,6 +27,10 @@ let g:pandoc#syntax#codeblocks#embeds#langs=["python"]
 
 "" NERDTree Preferences
 " let NERDTreeQuitOnOpen=1
+nnoremap <C-u> :NERDTreeToggle<CR>
+
+execute "set <M-u>=\eu"
+nnoremap <M-u> :NERDTreeToggle<CR>
 
 " ULTISNIPS
 " Trigger configuration.
@@ -39,4 +43,23 @@ let g:pandoc#syntax#codeblocks#embeds#langs=["python"]
 
 " Vim-IPython
 " source ~/.vim/bundle/vim-ipython/ftplugin/python/ipy.vim
+
+" slimux settings
+map <leader>s :SlimuxREPLSendLine<CR>
+map <C-c><C-c> : SlimuxREPLSendLine<CR>
+vmap <leader>s :SlimuxREPLSendSelection<CR>
+vmap <C-c><C-c> : SlimuxREPLSendSelection<CR>
+map <leader>a :SlimuxShellLast<CR>
+
+" vim-tmux-navigator
+let g:tmux_navigator_no_mappings = 1
+execute "set <M-h>=\eh"
+nnoremap <silent> <M-h> :TmuxNavigateLeft<cr>
+execute "set <M-j>=\ej"
+nnoremap <silent> <M-j> :TmuxNavigateDown<cr>
+execute "set <M-k>=\ek"
+nnoremap <silent> <M-k> :TmuxNavigateUp<cr>
+execute "set <M-l>=\el"
+nnoremap <silent> <M-l> :TmuxNavigateRight<cr>
+
 

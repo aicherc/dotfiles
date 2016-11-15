@@ -24,6 +24,12 @@ Plugin 'vim-pandoc/vim-pandoc-syntax'
 " YouCompleteMe
 Plugin 'Valloric/YouCompleteMe'
 
+" slimux
+Plugin 'epeli/slimux'
+
+" vim-tmux-navigator
+Plugin 'christoomey/vim-tmux-navigator'
+
 
 call vundle#end()
 
