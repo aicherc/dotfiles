@@ -28,8 +28,8 @@ let g:pandoc#syntax#codeblocks#embeds#langs=["python"]
 "" NERDTree Preferences
 " let NERDTreeQuitOnOpen=1
 nnoremap <C-u> :NERDTreeToggle<CR>
-
 execute "set <M-u>=\eu"
+inoremap <M-u> <Esc>u
 nnoremap <M-u> :NERDTreeToggle<CR>
 
 " ULTISNIPS
@@ -44,22 +44,31 @@ nnoremap <M-u> :NERDTreeToggle<CR>
 " Vim-IPython
 " source ~/.vim/bundle/vim-ipython/ftplugin/python/ipy.vim
 
-" slimux settings
-map <leader>s :SlimuxREPLSendLine<CR>
-map <C-c><C-c> : SlimuxREPLSendLine<CR>
-vmap <leader>s :SlimuxREPLSendSelection<CR>
-vmap <C-c><C-c> : SlimuxREPLSendSelection<CR>
-map <leader>a :SlimuxShellLast<CR>
+"" slimux settings
+"map <leader>s :SlimuxREPLSendLine<CR>
+"map <C-c><C-c> : SlimuxREPLSendLine<CR>
+"vmap <leader>s :SlimuxREPLSendSelection<CR>
+"vmap <C-c><C-c> : SlimuxREPLSendSelection<CR>
+"map <leader>a :SlimuxShellLast<CR>
+
+" vim-slime settings
+let g:slime_target = "tmux"
+let g:slime_python_ipython = 1
+let g:slime_default_config = {"socket_name": "default", "target_pane": "2" }
 
 " vim-tmux-navigator
 let g:tmux_navigator_no_mappings = 1
 execute "set <M-h>=\eh"
+inoremap <silent> <M-h> <Esc>h
 nnoremap <silent> <M-h> :TmuxNavigateLeft<cr>
 execute "set <M-j>=\ej"
+inoremap <silent> <M-j> <Esc>j
 nnoremap <silent> <M-j> :TmuxNavigateDown<cr>
 execute "set <M-k>=\ek"
+inoremap <silent> <M-k> <Esc>k
 nnoremap <silent> <M-k> :TmuxNavigateUp<cr>
 execute "set <M-l>=\el"
+inoremap <silent> <M-l> <Esc>l
 nnoremap <silent> <M-l> :TmuxNavigateRight<cr>
 
 

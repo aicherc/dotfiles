@@ -13,18 +13,18 @@ nnoremap <C-T> :setlocal spell! spelllang=en_us<CR>
 " Swap with previous buffer
 nnoremap ` <C-^>
 
+" Long wrapped line movement
+nnoremap k gk
+nnoremap j gj
+
 
 " Map for ESC
 " imap ;; <Esc>
 
 " Map for window traversal
-" execute "set <M-h>=\eh"
 " nnoremap <M-h> <C-w>h
-" execute "set <M-j>=\ej"
 " nnoremap <M-j> <C-w>j
-" execute "set <M-k>=\ek"
 " nnoremap <M-k> <C-w>k
-" execute "set <M-l>=\el"
 " nnoremap <M-l> <C-w>l
 
 " Jump shortcuts
