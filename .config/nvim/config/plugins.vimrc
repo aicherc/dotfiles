@@ -19,10 +19,13 @@ let g:pandoc#syntax#codeblocks#embeds#langs=["python"]
 " let NERDTreeQuitOnOpen=1
 
 " NeoTerm Settings (Plug 'kassio/neoterm')
-autocmd FileType python nnoremap <F10> :TREPLSendFile<CR>
-autocmd FileType python nnoremap <F9> :TREPLSend<CR>j
-autocmd FileType python vnoremap <F9> :TREPLSend<CR>
+autocmd FileType python nnoremap <F10> :%y+<CR> :T paste<CR>
+autocmd FileType python nnoremap <C-c><C-c> :TREPLSendLine<CR>j
+autocmd FileType python vnoremap <C-c><C-c> "+y :T paste<CR>
 nnoremap <A-n> :Ttoggle<CR>
 tnoremap <A-n> <C-\><C-n>:Ttoggle<CR>
+
+
+
 
 

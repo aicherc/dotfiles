@@ -44,17 +44,18 @@ nnoremap <M-u> :NERDTreeToggle<CR>
 " Vim-IPython
 " source ~/.vim/bundle/vim-ipython/ftplugin/python/ipy.vim
 
-"" slimux settings
-"map <leader>s :SlimuxREPLSendLine<CR>
-"map <C-c><C-c> : SlimuxREPLSendLine<CR>
-"vmap <leader>s :SlimuxREPLSendSelection<CR>
-"vmap <C-c><C-c> : SlimuxREPLSendSelection<CR>
-"map <leader>a :SlimuxShellLast<CR>
+" slimux settings
+nnoremap <leader>s :SlimuxREPLSendLine<CR>
+nnoremap <C-c><C-c> : SlimuxREPLSendLine<CR>
+vnoremap <leader>s :SlimuxREPLSendSelection<CR>
+vnoremap <C-c><C-c> : SlimuxREPLSendSelection<CR>
+nnoremap <leader>a :SlimuxShellLast<CR>
 
-" vim-slime settings
-let g:slime_python_ipython = 1
-let g:slime_target = "tmux"
-let g:slime_default_config = {"socket_name": "default", "target_pane": "2" }
+"" vim-slime settings
+"let g:slime_python_ipython = 1
+"let g:slime_target = "tmux"
+"let g:slime_default_config = {"socket_name": "default", "target_pane": "2" }
+
 
 " vim-tmux-navigator
 let g:tmux_navigator_no_mappings = 1
@@ -69,6 +70,5 @@ inoremap <silent> <M-k> <Esc>k
 nnoremap <silent> <M-k> :TmuxNavigateUp<cr>
 execute "set <M-l>=\el"
 inoremap <silent> <M-l> <Esc>l
-nnoremap <silent> <M-l> :TmuxNavigateRight<cr>
-
+nnoremap <silent> <M-l> :TmuxNavigateRight<cr> 
 

@@ -118,7 +118,6 @@ set softtabstop=4
 set tabstop=4
 set expandtab
 
-
 " For cpp/hpp Files
 autocmd FileType cpp,cxx,hpp,c,h setlocal shiftwidth=2 softtabstop=2 tabstop=2
 " autocmd FileType hpp setlocal shiftwidth=2 softtabstop=2 tabstop=2
