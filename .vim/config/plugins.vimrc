@@ -45,17 +45,17 @@ nnoremap <M-u> :NERDTreeToggle<CR>
 " source ~/.vim/bundle/vim-ipython/ftplugin/python/ipy.vim
 
 " slimux settings
-nnoremap <leader>s :SlimuxREPLSendLine<CR>
-nnoremap <C-c><C-c> : SlimuxREPLSendLine<CR>
-vnoremap <leader>s :SlimuxREPLSendSelection<CR>
-vnoremap <C-c><C-c> : SlimuxREPLSendSelection<CR>
-nnoremap <leader>a :SlimuxShellLast<CR>
+" nnoremap <leader>s :SlimuxREPLSendLine<CR>
+" nnoremap <C-c><C-c> : SlimuxREPLSendLine<CR>
+" vnoremap <leader>s :SlimuxREPLSendSelection<CR>
+" vnoremap <C-c><C-c> : SlimuxREPLSendSelection<CR>
+" nnoremap <leader>a :SlimuxShellLast<CR>
+" let g:slime_python_ipython = 1
 
-"" vim-slime settings
-"let g:slime_python_ipython = 1
-"let g:slime_target = "tmux"
-"let g:slime_default_config = {"socket_name": "default", "target_pane": "2" }
-
+" vim-slime settings
+let g:slime_python_ipython = 1
+let g:slime_target = "tmux"
+let g:slime_default_config = {"socket_name": "default", "target_pane": "2" }
 
 " vim-tmux-navigator
 let g:tmux_navigator_no_mappings = 1
