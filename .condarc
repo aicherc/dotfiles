@@ -1,1 +1,4 @@
 changeps1: no # Bash Terminal will list enviroment
+channels:
+  - conda-forge
+  - defaults
