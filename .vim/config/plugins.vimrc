@@ -56,6 +56,10 @@ nnoremap <M-u> :NERDTreeToggle<CR>
 let g:slime_python_ipython = 1
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "2" }
+let g:slime_no_mappings = 1
+xmap <c-c><c-c> :SlimeSend<CR>
+nmap <c-c><c-c> :SlimeSendCurrentLine<CR> +
+nmap <c-c>v     :SlimeConfig
 
 " vim-tmux-navigator
 let g:tmux_navigator_no_mappings = 1
@@ -70,5 +74,7 @@ inoremap <silent> <M-k> <Esc>k
 nnoremap <silent> <M-k> :TmuxNavigateUp<cr>
 execute "set <M-l>=\el"
 inoremap <silent> <M-l> <Esc>l
-nnoremap <silent> <M-l> :TmuxNavigateRight<cr> 
+nnoremap <silent> <M-l> :TmuxNavigateRight<cr>
+
+
 

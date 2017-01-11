@@ -91,7 +91,7 @@ set cmdheight=2
 set number
 
 " Quickly time out on keycodes, but never time out on mappings
-set notimeout ttimeout ttimeoutlen=200
+set notimeout ttimeout ttimeoutlen=50
 
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F10>

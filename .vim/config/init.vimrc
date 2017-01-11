@@ -34,6 +34,8 @@ Plugin 'jpalardy/vim-slime'
 " vim-tmux-navigator
 Plugin 'christoomey/vim-tmux-navigator'
 
+" vim-fugitive
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 
