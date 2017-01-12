@@ -117,7 +117,7 @@ fi
 
 source ~/.bash_prompt
 
-if [ -z ${CONDA_DEFAULT_ENV+x} ];
+if [ -z $CONDA_DEFAULT_ENV ];
 then
   export PATH=/home/aicherc/anaconda2/bin:$PATH;
 fi;
