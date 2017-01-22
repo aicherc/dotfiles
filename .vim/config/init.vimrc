@@ -43,7 +43,7 @@ call vundle#end()
 filetype plugin indent on
 
 " Define Python
-let g:python_host_prog = '/home/aicherc/anaconda2/bin/python'
+let g:python_host_prog = '~/anaconda2/bin/python'
 
 
 " Brief help

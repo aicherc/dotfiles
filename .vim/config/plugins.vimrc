@@ -76,5 +76,5 @@ execute "set <M-l>=\el"
 inoremap <silent> <M-l> <Esc>l
 nnoremap <silent> <M-l> :TmuxNavigateRight<cr>
 
-
-
+" vim-fugitive
+nnoremap <leader>gs :Gstatus<CR><C-w>20+
