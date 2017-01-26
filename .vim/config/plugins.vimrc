@@ -59,6 +59,7 @@ nnoremap <silent> <M-l> :TmuxNavigateRight<cr>
 nnoremap <leader>gs :Gstatus<CR><C-w>20+
 
 " vim-syntastic
+
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -69,7 +70,11 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_python_checkers = ['pyflakes']
-
+nnoremap <F3> :SyntasticToggleMode<CR> :w<CR>
+let g:syntastic_mode_map = { 
+            \ "mode": "passive",
+            \ "active_filetypes": [],
+            \ "passive_filetypes": [] }
 
 
 

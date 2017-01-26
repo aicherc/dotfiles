@@ -17,6 +17,12 @@ Plugin 'altercation/vim-colors-solarized'
 " nerdtree
 Plugin 'scrooloose/nerdtree'
 
+" vim-vinegar
+Plugin 'tpope/vim-vinegar'
+
+" ctrl-p
+Plugin 'ctrlpvim/ctrlp.vim'
+
 " vim-pandoc
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
@@ -39,6 +45,10 @@ Plugin 'tpope/vim-fugitive'
 
 " vim-syntastic
 Plugin 'vim-syntastic/syntastic'
+
+
+
+
 
 call vundle#end()
 
