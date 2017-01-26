@@ -14,16 +14,6 @@ let g:pandoc#modules#disabled=["folding"]
 let g:pandoc#syntax#conceal#use=0
 let g:pandoc#syntax#codeblocks#embeds#langs=["python"]
 
-"" Syntastic Preferences
-"let g:syntastic_python_checkers=['python', 'flake8']
-"let g:syntastic_python_flake8_args='--ignore=E128,E126,E501'
-"let g:syntastic_always_populate_loc_list=0
-"let g:syntastic_auto_loc_list=1
-
-"" Run SyntasticCheck
-"nnoremap <leader>syn :SyntasticCheck<CR>
-""Toggle Syntastic
-"nnoremap <leader>syntog :SyntasticToggleMode<CR>
 
 "" NERDTree Preferences
 " let NERDTreeQuitOnOpen=1
@@ -31,18 +21,6 @@ nnoremap <C-u> :NERDTreeToggle<CR>
 execute "set <M-u>=\eu"
 inoremap <M-u> <Esc>u
 nnoremap <M-u> :NERDTreeToggle<CR>
-
-" ULTISNIPS
-" Trigger configuration.
-" let g:UltiSnipsExpandTrigger="<c-j>"
-" let g:UltiSnipsJumpForwardTrigger="<c-b>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" If you want :UltiSnipsEdit to split your window.
-" let g:UltiSnipsEditSplit="vertical"
-
-" Vim-IPython
-" source ~/.vim/bundle/vim-ipython/ftplugin/python/ipy.vim
 
 " slimux settings
 " nnoremap <leader>s :SlimuxREPLSendLine<CR>
@@ -56,6 +34,7 @@ nnoremap <M-u> :NERDTreeToggle<CR>
 let g:slime_python_ipython = 1
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "2" }
+let g:slime_dont_ask_default = 1
 let g:slime_no_mappings = 1
 xmap <c-c><c-c> :SlimeSend<CR>
 nmap <c-c><c-c> :SlimeSendCurrentLine<CR> +
@@ -78,3 +57,19 @@ nnoremap <silent> <M-l> :TmuxNavigateRight<cr>
 
 " vim-fugitive
 nnoremap <leader>gs :Gstatus<CR><C-w>20+
+
+" vim-syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_python_checkers = ['pyflakes']
+
+
+
+

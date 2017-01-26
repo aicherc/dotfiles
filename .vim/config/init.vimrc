@@ -37,6 +37,9 @@ Plugin 'christoomey/vim-tmux-navigator'
 " vim-fugitive
 Plugin 'tpope/vim-fugitive'
 
+" vim-syntastic
+Plugin 'vim-syntastic/syntastic'
+
 call vundle#end()
 
 " Plugin for indents
