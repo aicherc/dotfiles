@@ -72,6 +72,10 @@ set ruler
 
 " Always display the status line
 set laststatus=2
+set statusline=%<%f         " Path to file
+set statusline+=\ %m        " Indicate if file has changed
+set statusline+=%=          " Append to right Side
+set statusline+=%l,%c       " Row # and Col #
 
 " Raise a dialogue to check if I wish to save changes to a file
 set confirm

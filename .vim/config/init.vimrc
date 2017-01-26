@@ -47,9 +47,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'vim-syntastic/syntastic'
 
 
-
-
-
 call vundle#end()
 
 " Plugin for indents
