@@ -123,7 +123,7 @@ autocmd FileType cpp,cxx,hpp,c,h setlocal shiftwidth=2 softtabstop=2 tabstop=2
 " autocmd FileType hpp setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
 " For Cython Files
-au BufNewFile,BufRead *.pyx set filetype=python
+au BufNewFile,BufRead *.pyx,*.ipy set filetype=python
 
 " Strip trailing whitespace in code
 fun! <SID>StripTrailingWhitespaces()
