@@ -18,7 +18,7 @@ Don't forget to add permission to the file with `chmod +x`
 
 ### Other Things to Install First
 * Git
-* Anaconda
+* Anaconda [link](https://www.continuum.io/downloads)
 * Chrome
 * Dropbox
 * R + RStudio
@@ -27,6 +27,17 @@ Don't forget to add permission to the file with `chmod +x`
 * solarized colorscheme for terminal [link](https://github.com/Anthony25/gnome-terminal-colors-solarized)
 * neovim [link](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 * Install neovim python modules to Anaconda [link](https://neovim.io/doc/user/provider.html#provider-python)
+
+## Anaconda
+
+The following packages are recommended:
+```
+conda install numpy scipy pandas scikit-learn ipython matplotlib seaborn
+```
+
+Also consider removing `mkl` [link](https://www.continuum.io/blog/developer-blog/anaconda-25-release-now-mkl-optimizations)
+
+For cluster/terminals without write access, consider using miniconda instead.
 
 
 ## VIM + NEOVIM Plug-in Notes
@@ -48,18 +59,11 @@ YCM is a code completion engine for Vim and NeoVim.
 It has a compiled component that requires a few steps to install (including installing cmake).
 See [link](https://github.com/Valloric/YouCompleteMe) for more details.
 
+I've found that installing this can be difficult (as some dependencies may not auto install).
+For example installing `libgcc` with `conda`.
+
 
 ### Markdown Viewing
 Use your favorite browser to view markdown files with F6
-
-### TODO:
-
-* Learn about tags - ctags and taglist for quick code navigation
- See https://github.com/xolox/vim-easytags and http://vimawesome.com/plugin/tagbar
-* CTRL-P for fuzzy file search http://vimawesome.com/plugin/ctrlp-vim-red
-
-* Git Hooks for .ipynb files
-
-
 
 
