@@ -7,6 +7,9 @@ case $- in
       *) return;;
 esac
 
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -121,6 +124,7 @@ if [ -z $CONDA_DEFAULT_ENV ];
 then
   export PATH=/home/aicherc/anaconda2/bin:$PATH;
 fi;
+
 
 # Enable bashrc from ssh
 shopt -s expand_aliases
