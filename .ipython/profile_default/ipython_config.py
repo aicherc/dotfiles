@@ -313,7 +313,7 @@
 # c.TerminalInteractiveShell.display_completions = 'multicolumn'
 
 # Shortcut style to use at the prompt. 'vi' or 'emacs'.
-# c.TerminalInteractiveShell.editing_mode = 'emacs'
+c.TerminalInteractiveShell.editing_mode = 'vi'
 
 # Set the editor used by IPython (default to $EDITOR/vi/notepad).
 c.TerminalInteractiveShell.editor = 'vim'
@@ -335,6 +335,22 @@ c.TerminalInteractiveShell.editor = 'vim'
 
 # Class used to generate Prompt token for prompt_toolkit
 # c.TerminalInteractiveShell.prompts_class = 'IPython.terminal.prompts.Prompts'
+
+###### CUSTOM IPYTHON Display VI MODE -> This needs to be improved
+from IPython.terminal.prompts import Prompts, Token
+from prompt_toolkit.key_binding.vi_state import InputMode
+
+class MyPrompts(Prompts):
+
+    def in_prompt_tokens(self, cli=None):
+        mode = ':' if cli.vi_state.input_mode == InputMode.INSERT else '|'
+        return [
+            (Token.Prompt, 'In ['),
+            (Token.PromptNum, str(self.shell.execution_count)),
+            (Token.Prompt, ']%s ' % mode)
+        ]
+c.TerminalInteractiveShell.prompts_class = MyPrompts
+
 
 # Use `raw_input` for the REPL, without completion, multiline input, and prompt
 # colors.
