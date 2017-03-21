@@ -4,6 +4,9 @@
 " Enable Syntax highlighting
 syntax on
 
+" Necesary for lots of cool vim things
+set nocompatible
+
 " Multiple windows
 set hidden
 
@@ -107,11 +110,14 @@ set whichwrap+=<,>,h,l,[,]
 set colorcolumn=81,161,241
 
 " Highligh Trailing Whitespace
-:highlight ExtraWhitespace ctermbg=Brown guibg=Brown
-:match ExtraWhitespace /\s\+\%#\@<!$/
+highlight ExtraWhitespace ctermbg=Brown guibg=Brown
+match ExtraWhitespace /\s\+\%#\@<!$/
 
 " Code Completion
 " set completeopt+=preview
+
+" Wildignore (filetypes to ignore)
+set wildignore+=*.pyc,*.sw?,*.so,*.o,*.exe,*.dll,*.pyo
 
 "---------------------------
 " Indent Options
@@ -139,4 +145,5 @@ endfun
 autocmd FileType c,cpp,hpp,cxx,h,python,java,php
    \ autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
-
+" Tex is LaTeX 
+let g:tex_flavor='latex'

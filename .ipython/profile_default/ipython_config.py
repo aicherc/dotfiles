@@ -203,7 +203,7 @@
 # c.InteractiveShell.color_info = True
 
 # Set the color scheme (NoColor, Neutral, Linux, or LightBG).
-# c.InteractiveShell.colors = 'Neutral'
+c.InteractiveShell.colors = 'Neutral'
 
 #
 # c.InteractiveShell.debug = False
@@ -313,7 +313,7 @@
 # c.TerminalInteractiveShell.display_completions = 'multicolumn'
 
 # Shortcut style to use at the prompt. 'vi' or 'emacs'.
-c.TerminalInteractiveShell.editing_mode = 'vi'
+# c.TerminalInteractiveShell.editing_mode = 'vi'
 
 # Set the editor used by IPython (default to $EDITOR/vi/notepad).
 c.TerminalInteractiveShell.editor = 'vim'
@@ -325,7 +325,7 @@ c.TerminalInteractiveShell.editor = 'vim'
 # lovelace, xcode, vim, autumn, vs, rrt, native, perldoc, borland, tango, emacs,
 # friendly, monokai, paraiso-dark, colorful, murphy, bw, pastie, algol_nu,
 # paraiso-light, trac, default, algol, fruity
-# c.TerminalInteractiveShell.highlighting_style = 'legacy'
+# c.TerminalInteractiveShell.highlighting_style = ""
 
 # Override highlighting format for specific tokens
 # c.TerminalInteractiveShell.highlighting_style_overrides = {}
@@ -336,20 +336,20 @@ c.TerminalInteractiveShell.editor = 'vim'
 # Class used to generate Prompt token for prompt_toolkit
 # c.TerminalInteractiveShell.prompts_class = 'IPython.terminal.prompts.Prompts'
 
-###### CUSTOM IPYTHON Display VI MODE -> This needs to be improved
-from IPython.terminal.prompts import Prompts, Token
-from prompt_toolkit.key_binding.vi_state import InputMode
-
-class MyPrompts(Prompts):
-
-    def in_prompt_tokens(self, cli=None):
-        mode = ':' if cli.vi_state.input_mode == InputMode.INSERT else '|'
-        return [
-            (Token.Prompt, 'In ['),
-            (Token.PromptNum, str(self.shell.execution_count)),
-            (Token.Prompt, ']%s ' % mode)
-        ]
-c.TerminalInteractiveShell.prompts_class = MyPrompts
+####### CUSTOM IPYTHON Display VI MODE -> This needs to be improved
+#from IPython.terminal.prompts import Prompts, Token
+#from prompt_toolkit.key_binding.vi_state import InputMode
+#
+#class MyPrompts(Prompts):
+#
+#    def in_prompt_tokens(self, cli=None):
+#        mode = ':' if cli.vi_state.input_mode == InputMode.INSERT else '|'
+#        return [
+#            (Token.Prompt, 'In ['),
+#            (Token.PromptNum, str(self.shell.execution_count)),
+#            (Token.Prompt, ']%s ' % mode)
+#        ]
+#c.TerminalInteractiveShell.prompts_class = MyPrompts
 
 
 # Use `raw_input` for the REPL, without completion, multiline input, and prompt

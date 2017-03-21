@@ -43,8 +43,14 @@ Plugin 'christoomey/vim-tmux-navigator'
 " vim-fugitive
 Plugin 'tpope/vim-fugitive'
 
+" vim-obsession
+Plugin 'tpope/vim-obsession'
+
 " vim-syntastic
 Plugin 'vim-syntastic/syntastic'
+
+" vim-ctrlspace
+" Plugin 'vim-ctrlspace/vim-ctrlspace'
 
 
 call vundle#end()

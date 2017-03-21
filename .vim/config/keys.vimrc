@@ -17,6 +17,8 @@ nnoremap ` <C-^>
 nnoremap k gk
 nnoremap j gj
 
+" Map Q for qa
+:command Q qa
 
 " Map for ESC
 " imap ;; <Esc>
