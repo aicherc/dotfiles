@@ -110,8 +110,8 @@ set whichwrap+=<,>,h,l,[,]
 set colorcolumn=81,161,241
 
 " Highligh Trailing Whitespace
-highlight ExtraWhitespace ctermbg=Brown guibg=Brown
-match ExtraWhitespace /\s\+\%#\@<!$/
+:highlight ExtraWhitespace ctermbg=Brown guibg=Brown
+:match ExtraWhitespace /\s\+\%#\@<!$/
 
 " Code Completion
 " set completeopt+=preview

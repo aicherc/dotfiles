@@ -17,8 +17,8 @@ Plugin 'altercation/vim-colors-solarized'
 " nerdtree
 Plugin 'scrooloose/nerdtree'
 
-" vim-vinegar
-Plugin 'tpope/vim-vinegar'
+"" vim-vinegar
+"Plugin 'tpope/vim-vinegar'
 
 " ctrl-p
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -51,6 +51,9 @@ Plugin 'vim-syntastic/syntastic'
 
 " vim-ctrlspace
 " Plugin 'vim-ctrlspace/vim-ctrlspace'
+
+" " ack.vim for ag
+" Plugin 'mileszs/ack.vim'
 
 
 call vundle#end()

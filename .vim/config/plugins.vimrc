@@ -18,10 +18,29 @@ let g:pandoc#syntax#codeblocks#embeds#langs=["python"]
 
 "" NERDTree Preferences
 " let NERDTreeQuitOnOpen=1
-nnoremap <C-u> :NERDTreeToggle<CR>
+nnoremap <C-u> :call ProjectNerdTreeToggle()<CR>
 execute "set <M-u>=\eu"
 inoremap <M-u> <Esc>u
-nnoremap <M-u> :NERDTreeToggle<CR>
+nnoremap <M-u> :call ProjectNerdTreeToggle()<CR>
+nnoremap - :call LocalNerdTreeToggle()<CR>
+function! ProjectNerdTreeToggle()
+    if exists('t:NERDTreeBufName') && bufwinnr(t:NERDTreeBufName) != -1
+        :NERDTreeClose
+    else
+        :NERDTree
+    endif
+endfunction
+function! LocalNerdTreeToggle()
+    if exists('t:NERDTreeBufName') && bufwinnr(t:NERDTreeBufName) != -1
+        :NERDTreeClose
+    else
+        if bufname("%") == ""
+            :NERDTree
+        else
+            :NERDTree %
+        endif
+    endif
+endfunction
 
 " slimux settings
 " nnoremap <leader>s :SlimuxREPLSendLine<CR>
@@ -34,9 +53,14 @@ nnoremap <M-u> :NERDTreeToggle<CR>
 " vim-slime settings
 let g:slime_python_ipython = 1
 let g:slime_target = "tmux"
-let g:slime_default_config = {"socket_name": "default", "target_pane": "2" }
-let g:slime_dont_ask_default = 1
+if exists('$TMUX')
+    let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": "2"}
+    let g:slime_dont_ask_default = 1
+endif
 let g:slime_no_mappings = 1
+autocmd FileType python xmap <leader>s <Plug>SlimeRegionSend
+autocmd FileType python nmap <leader>s <Plug>SlimeMotionSend
+autocmd FileType python nmap <leader>ss <Plug>SlimeLineSend
 autocmd FileType python xmap <c-c><c-c> :SlimeSend<CR>
 autocmd FileType python nmap <c-c><c-c> :SlimeSendCurrentLine<CR> +
 autocmd FileType python nmap <c-c>v     :SlimeConfig
@@ -91,6 +115,7 @@ let g:syntastic_mode_map = {
 "let g:CtrlSpaceSaveWorkspaceOnExit = 1
 
 " ctrlp
+" ctrlp should use silver-surfer
 if executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
@@ -102,14 +127,24 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-" Map Alt-n to search
-execute "set <M-n>=\en"
-inoremap <silent> <M-n> <Esc><n>
-nnoremap <silent> <M-n> :CtrlP<cr>
+" ctrlp ignores spaces
+let g:ctrlp_abbrev = {
+  \ 'gmode': 'i',
+  \ 'abbrevs': [
+    \ {
+      \ 'pattern': ' ',
+      \ 'expanded': '',
+      \ 'mode': 'pfrz',
+    \ },
+    \ ]
+  \ }
 
-execute "set <M-m>=\em"
-inoremap <silent> <M-m> <Esc><m>
-nnoremap <silent> <M-m> :CtrlPBuffer<cr>
+" Map Alt-m to search buffers
+nnoremap <silent> <C-m> :CtrlPBuffer<cr>
 
+" " ack.vim
+" if executable('ag')
+"   let g:ackprg = 'ag --vimgrep'
+" endif
 
 

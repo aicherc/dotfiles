@@ -18,10 +18,11 @@ nnoremap k gk
 nnoremap j gj
 
 " Map Q for qa
-:command Q qa
+:command! Q qa
 
 " Map for ESC
-" imap ;; <Esc>
+imap <C-c> <Esc>
+nnoremap <C-c> <silent> <C-c>
 
 " Map for window traversal
 " nnoremap <M-h> <C-w>h
@@ -39,11 +40,12 @@ nnoremap <A-i> <C-i>
 
 "---------------------------
 " LaTeX Shortcuts
-autocmd FileType tex nmap <F5> :w! \| :lcd %:p:h \| :! pdflatex -synctex=1 -interaction=nonstopmode %:r.tex <CR> <CR>
-autocmd FileType tex nmap <F6> :! evince %:r.pdf > /dev/null 2>&1 & <CR><CR>
-autocmd FileType tex nmap <F7> :w! \| :lcd %:p:h \| :! bibtex %:r.aux <CR><CR>
+autocmd FileType tex nnoremap <buffer> <silent> <F5> :w! \| :lcd %:p:h \| :! pdflatex -synctex=1 -interaction=nonstopmode %:r.tex <CR> \| :lcd - <CR>
+autocmd FileType tex nnoremap <buffer> <silent> <F6> :! evince %:r.pdf > /dev/null 2>&1 & <CR><CR>
+autocmd FileType tex nnoremap <buffer> <silent> <F7> :w! \| :lcd %:p:h \| :! bibtex %:r.aux <CR> \| :lcd - <CR>
 autocmd FileType tex setlocal spell spelllang=en_us
 autocmd FileType tex setlocal textwidth=79
 
 " Markdown Shortcut
-autocmd FileType markdown nmap <F6> :w! \| :! google-chrome --new-window %:p <CR><CR>
+autocmd FileType markdown nnoremap <buffer> <silent> <F6> :w! \| :! google-chrome --new-window %:p <CR> \| :lcd - <CR>
+
