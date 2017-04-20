@@ -13,6 +13,10 @@ nnoremap <C-T> :setlocal spell! spelllang=en_us<CR>
 " Swap with previous buffer
 nnoremap ` <C-^>
 
+" Insert a single character
+nnoremap ,i i_<Esc>r
+nnoremap ,a a_<Esc>r
+
 " Long wrapped line movement
 nnoremap k gk
 nnoremap j gj
@@ -20,15 +24,14 @@ nnoremap j gj
 " Map Q for qa
 :command! Q qa
 
-" Map for ESC
-imap <C-c> <Esc>
-nnoremap <C-c> <silent> <C-c>
-
 " Map for window traversal
 " nnoremap <M-h> <C-w>h
 " nnoremap <M-j> <C-w>j
 " nnoremap <M-k> <C-w>k
 " nnoremap <M-l> <C-w>l
+
+" Avoid Ctrl-C
+inoremap <C-c> <Nop>
 
 " Jump shortcuts
 nnoremap <A-o> <C-o>

@@ -12,6 +12,7 @@ set hidden
 
 " Command-line completion
 set wildmenu
+set wildmode=longest:full,full
 
 " Show partial commands in last line of screen
 set showcmd

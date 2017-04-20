@@ -18,11 +18,11 @@ let g:pandoc#syntax#codeblocks#embeds#langs=["python"]
 
 "" NERDTree Preferences
 " let NERDTreeQuitOnOpen=1
-nnoremap <C-u> :call ProjectNerdTreeToggle()<CR>
+nnoremap <silent> <C-u> :call ProjectNerdTreeToggle()<CR>
 execute "set <M-u>=\eu"
 inoremap <M-u> <Esc>u
-nnoremap <M-u> :call ProjectNerdTreeToggle()<CR>
-nnoremap - :call LocalNerdTreeToggle()<CR>
+nnoremap <silent> <M-u> :call ProjectNerdTreeToggle()<CR>
+nnoremap <silent> - :call LocalNerdTreeToggle()<CR>
 function! ProjectNerdTreeToggle()
     if exists('t:NERDTreeBufName') && bufwinnr(t:NERDTreeBufName) != -1
         :NERDTreeClose
