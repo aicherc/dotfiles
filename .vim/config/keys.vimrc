@@ -14,8 +14,8 @@ nnoremap <C-T> :setlocal spell! spelllang=en_us<CR>
 nnoremap ` <C-^>
 
 " Insert a single character
-nnoremap ,i i_<Esc>r
-nnoremap ,a a_<Esc>r
+nnoremap <leader>i i_<Esc>r
+nnoremap <leader>a a_<Esc>r
 
 " Long wrapped line movement
 nnoremap k gk

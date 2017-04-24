@@ -140,7 +140,7 @@ let g:ctrlp_abbrev = {
   \ }
 
 " Map Alt-m to search buffers
-nnoremap <silent> <C-m> :CtrlPBuffer<cr>
+nnoremap <silent> <C-b> :CtrlPBuffer<cr>
 
 " " ack.vim
 " if executable('ag')
