@@ -89,6 +89,10 @@ set visualbell
 
 " And reset the terminal code for visual bell.
 set t_vb=
+
+" Surpresss vim asking for terminal version
+"set t_RV=
+
 " Enable use of mouse
 " set mouse=a
 
@@ -146,5 +150,20 @@ endfun
 autocmd FileType c,cpp,hpp,cxx,h,python,java,php
    \ autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
-" Tex is LaTeX 
+" Tex is LaTeX
 let g:tex_flavor='latex'
+
+"------------------------------
+" Cursor Options
+if has("autocmd")
+  au VimEnter,InsertLeave * silent execute '!echo -ne "\e[1 q"' |
+  au InsertEnter,InsertChange *
+    \ if v:insertmode == 'i' |
+    \   silent execute '!echo -ne "\e[5 q"' |
+    \ elseif v:insertmode == 'r' |
+    \   silent execute '!echo -ne "\e[3 q"' |
+    \ endif
+  au VimLeave * silent execute '!echo -ne "\e[ q"' |
+endif
+
+

@@ -313,7 +313,7 @@ c.InteractiveShell.colors = 'Neutral'
 # c.TerminalInteractiveShell.display_completions = 'multicolumn'
 
 # Shortcut style to use at the prompt. 'vi' or 'emacs'.
-#c.TerminalInteractiveShell.editing_mode = 'vi'
+c.TerminalInteractiveShell.editing_mode = 'vi'
 
 # Set the editor used by IPython (default to $EDITOR/vi/notepad).
 c.TerminalInteractiveShell.editor = 'vim'
@@ -335,6 +335,38 @@ c.TerminalInteractiveShell.editor = 'vim'
 
 # Class used to generate Prompt token for prompt_toolkit
 # c.TerminalInteractiveShell.prompts_class = 'IPython.terminal.prompts.Prompts'
+
+# Custom - Christopher Aicher
+from IPython.terminal.prompts import Prompts, Token
+from prompt_toolkit.key_binding.vi_state import InputMode
+
+
+class MyPrompts(Prompts):
+    def in_prompt_tokens(self, cli=None):
+        mode = 'ins' if cli.vi_state.input_mode == InputMode.INSERT else 'cmd'
+        return [
+            (Token.Prompt, '(%s)In [' % mode),
+            (Token.PromptNum, str(self.shell.execution_count)),
+            (Token.Prompt, ']: ')
+        ]
+    def rprompt_tokens(self, cli=None):
+        if cli.vi_state.input_mode == InputMode.INSERT:
+            mode = "-- INSERT --"
+        else:
+            mode = "-- CMD --"
+        return [(Token.RPrompt, mode)]
+
+    def bottom_toolbar_tokens(self, cli=None):
+        if cli.vi_state.input_mode == InputMode.INSERT:
+            mode = "-- INSERT --"
+        else:
+            mode = "-- CMD --"
+        return [(Token.Toolbar, mode)]
+
+c.TerminalInteractiveShell.prompts_class = MyPrompts
+
+
+
 
 ####### CUSTOM IPYTHON Display VI MODE -> This needs to be improved
 #from IPython.terminal.prompts import Prompts, Token

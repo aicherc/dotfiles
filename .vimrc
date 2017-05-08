@@ -4,3 +4,7 @@ source $HOME/.vim/config/init.vimrc
 source $HOME/.vim/config/plugins.vimrc
 source $HOME/.vim/config/general.vimrc
 source $HOME/.vim/config/keys.vimrc
+
+if has("autocmd")
+    autocmd VimEnter * redraw!
+endif

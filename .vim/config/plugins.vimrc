@@ -11,13 +11,13 @@ autocmd FileType python nnoremap ? :YcmCompleter GetDoc <CR>
 let g:ycm_key_invoke_completion = '<C-Space>'
 
 " Pandoc Preferences
-let g:pandoc#modules#disabled=["folding"]
+let g:pandoc#modules#disabled=["folding", "chdir"]
 let g:pandoc#syntax#conceal#use=0
 let g:pandoc#syntax#codeblocks#embeds#langs=["python"]
 
 
 "" NERDTree Preferences
-" let NERDTreeQuitOnOpen=1
+let NERDTreeQuitOnOpen=1
 nnoremap <silent> <C-u> :call ProjectNerdTreeToggle()<CR>
 execute "set <M-u>=\eu"
 inoremap <M-u> <Esc>u
@@ -58,12 +58,12 @@ if exists('$TMUX')
     let g:slime_dont_ask_default = 1
 endif
 let g:slime_no_mappings = 1
-autocmd FileType python xmap <leader>s <Plug>SlimeRegionSend
-autocmd FileType python nmap <leader>s <Plug>SlimeMotionSend
-autocmd FileType python nmap <leader>ss <Plug>SlimeLineSend
-autocmd FileType python xmap <c-c><c-c> :SlimeSend<CR>
-autocmd FileType python nmap <c-c><c-c> :SlimeSendCurrentLine<CR> +
-autocmd FileType python nmap <c-c>v     :SlimeConfig
+autocmd FileType python xmap <silent> <leader>s <Plug>SlimeRegionSend
+autocmd FileType python nmap <silent> <leader>s <Plug>SlimeMotionSend
+autocmd FileType python nmap <silent> <leader>ss <Plug>SlimeLineSend
+autocmd FileType python xmap <silent> <c-c><c-c> :SlimeSend<CR>
+autocmd FileType python nmap <silent> <c-c><c-c> :SlimeSendCurrentLine<CR> +
+autocmd FileType python nmap <silent> <c-c>v     :SlimeConfig
 
 " vim-tmux-navigator
 let g:tmux_navigator_no_mappings = 1

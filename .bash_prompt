@@ -127,7 +127,8 @@ PS1+="\[${userStyle}\]\u"; # username
 PS1+="\[${white}\] at ";
 PS1+="\[${hostStyle}\]\h"; # host
 PS1+="\[${white}\] in ";
-PS1+="\[${green}\]\W"; # current working directory
+export PROMPT_DIRTRIM=2 # working directory length
+PS1+="\[${green}\]\w"; # current working directory
 PS1+="\[\$(prompt_git \"${white} on ${violet}\")\]\n"; # Git repository details
 PS1+="\[${white}\]\$ \[${reset}\]"; # `$` (and reset color)
 export PS1;
