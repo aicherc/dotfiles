@@ -17,12 +17,6 @@ let g:pandoc#syntax#codeblocks#embeds#langs=["python"]
 
 
 "" NERDTree Preferences
-let NERDTreeQuitOnOpen=1
-nnoremap <silent> <C-u> :call ProjectNerdTreeToggle()<CR>
-execute "set <M-u>=\eu"
-inoremap <M-u> <Esc>u
-nnoremap <silent> <M-u> :call ProjectNerdTreeToggle()<CR>
-nnoremap <silent> - :call LocalNerdTreeToggle()<CR>
 function! ProjectNerdTreeToggle()
     if exists('t:NERDTreeBufName') && bufwinnr(t:NERDTreeBufName) != -1
         :NERDTreeClose
@@ -41,6 +35,14 @@ function! LocalNerdTreeToggle()
         endif
     endif
 endfunction
+
+let NERDTreeQuitOnOpen=1
+nnoremap <silent> <C-u> :call ProjectNerdTreeToggle()<CR>
+execute "set <M-u>=\eu"
+inoremap <M-u> <Esc>u
+nnoremap <silent> <M-u> :call ProjectNerdTreeToggle()<CR>
+nnoremap <silent> - :call LocalNerdTreeToggle()<CR>
+
 
 " slimux settings
 " nnoremap <leader>s :SlimuxREPLSendLine<CR>
@@ -101,50 +103,53 @@ let g:syntastic_mode_map = {
             \ "active_filetypes": [],
             \ "passive_filetypes": [] }
 
-"" vim-ctrlspace
-"if executable("ag")
-"    let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
+"" ctrlp
+"" ctrlp should use silver-surfer
+"if executable('ag')
+"  " Use ag over grep
+"  set grepprg=ag\ --nogroup\ --nocolor
+"
+"  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+"  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+"
+"  " ag is fast enough that CtrlP doesn't need to cache
+"  let g:ctrlp_use_caching = 0
 "endif
 "
-"execute "set <M-n>=\en"
-"inoremap <silent> <M-n> <Esc><n>
-"nnoremap <silent> <M-n> :CtrlSpace<cr>
-"let g:CtrlSpaceSetDefaultMapping = 0
-"let g:CtrlSpaceLoadLastWorkspaceOnStart = 0
-"let g:CtrlSpaceSaveWorkspaceOnSwitch = 1
-"let g:CtrlSpaceSaveWorkspaceOnExit = 1
-
-" ctrlp
-" ctrlp should use silver-surfer
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
-
-" ctrlp ignores spaces
-let g:ctrlp_abbrev = {
-  \ 'gmode': 'i',
-  \ 'abbrevs': [
-    \ {
-      \ 'pattern': ' ',
-      \ 'expanded': '',
-      \ 'mode': 'pfrz',
-    \ },
-    \ ]
-  \ }
-
-" Map Alt-m to search buffers
-nnoremap <silent> <C-b> :CtrlPBuffer<cr>
+"" ctrlp ignores spaces
+"let g:ctrlp_abbrev = {
+"  \ 'gmode': 'i',
+"  \ 'abbrevs': [
+"    \ {
+"      \ 'pattern': ' ',
+"      \ 'expanded': '',
+"      \ 'mode': 'pfrz',
+"    \ },
+"    \ ]
+"  \ }
+"
+"" Map Alt-m to search buffers
+"nnoremap <silent> <C-b> :CtrlPBuffer<cr>
 
 " " ack.vim
 " if executable('ag')
 "   let g:ackprg = 'ag --vimgrep'
 " endif
+
+"" FZF
+" FZF project files on C-p
+function! s:find_git_root()
+  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunction
+command! ProjectFiles execute 'Files' s:find_git_root()
+nnoremap <silent> <C-p> :ProjectFiles<CR>
+" FZF buffers on C-b
+nnoremap <silent> <C-b> :Buffers<CR>
+
+"" VimWiki
+set lazyredraw
+" Diasble commands by mapping to <F99>
+nmap <F38> <Plug>VimwikiRemoveHeaderLevel
+
 
 
