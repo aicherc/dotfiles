@@ -34,12 +34,16 @@ Plug 'tpope/vim-obsession'
 " vim-syntastic
 Plug 'vim-syntastic/syntastic'
 
-" fzf.vim
+"" fzf.vim
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+"Plug 'junegunn/fzf.vim'
 
 " vimwiki
-Plug 'vimwiki/vimwiki'
+" Plug 'vimwiki/vimwiki'
+
+" Denite
+Plug 'Shougo/denite.nvim'
+
 
 
 " End of Pluggins

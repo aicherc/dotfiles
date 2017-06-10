@@ -136,20 +136,40 @@ let g:syntastic_mode_map = {
 "   let g:ackprg = 'ag --vimgrep'
 " endif
 
-"" FZF
-" FZF project files on C-p
+""" FZF
+"" FZF project files on C-p
+"function! s:find_git_root()
+"  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+"endfunction
+"command! ProjectFiles execute 'Files' s:find_git_root()
+"nnoremap <silent> <C-p> :ProjectFiles<CR>
+"" FZF buffers on C-b
+"nnoremap <silent> <C-b> :Buffers<CR>
+
+""" VimWiki
+"set lazyredraw
+"" Diasble commands by mapping to <F99>
+"nmap <F38> <Plug>VimwikiRemoveHeaderLevel
+
+"" Denite
+" Change default prompt
+call denite#custom#option('default', 'prompt', '>')
+" Change default mappings
+call denite#custom#map('insert','<C-j>','<denite:move_to_next_line>','noremap')
+call denite#custom#map('insert','<C-k>','<denite:move_to_previous_line>','noremap')
+call denite#custom#map('insert','<C-v>','<denite:do_action:vsplit>','noremap')
+call denite#custom#map('insert','<C-t>','<denite:do_action:tabopen>','noremap')
+
+" Search Project Files
 function! s:find_git_root()
   return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
 endfunction
-command! ProjectFiles execute 'Files' s:find_git_root()
-nnoremap <silent> <C-p> :ProjectFiles<CR>
-" FZF buffers on C-b
-nnoremap <silent> <C-b> :Buffers<CR>
+command DeniteProjectFiles execute ":Denite -path=" .s:find_git_root()
+            \ "-winheight=10" "file_rec"
+nnoremap <silent> <C-p> :DeniteProjectFiles<CR>
 
-"" VimWiki
-set lazyredraw
-" Diasble commands by mapping to <F99>
-nmap <F38> <Plug>VimwikiRemoveHeaderLevel
+" Search buffers
+nnoremap <silent> <C-b> :Denite -winheight=10 buffer<CR>
 
 
 
