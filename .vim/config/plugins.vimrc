@@ -7,7 +7,7 @@ let g:ycm_python_binary_path = 'python'
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_max_diagnostics_to_display = -1
 autocmd FileType python nnoremap <F2> :YcmCompleter GoTo <CR>
-autocmd FileType python nnoremap ? :YcmCompleter GetDoc <CR>
+autocmd FileType python nnoremap <c-?> :YcmCompleter GetDoc <CR>
 let g:ycm_key_invoke_completion = '<C-Space>'
 
 " Pandoc Preferences
@@ -66,6 +66,7 @@ autocmd FileType python nmap <silent> <leader>ss <Plug>SlimeLineSend
 autocmd FileType python xmap <silent> <c-c><c-c> :SlimeSend<CR>
 autocmd FileType python nmap <silent> <c-c><c-c> :SlimeSendCurrentLine<CR> +
 autocmd FileType python nmap <silent> <c-c>v     :SlimeConfig
+"autocmd FileType python nmap <silent> <c-c><c-h> l?#%\\|\%^<CR>0v/#%\\|\%$<CR><CR><c-c><c-c>/#%\\|\%$<CR>:noh<CR>
 
 " vim-tmux-navigator
 let g:tmux_navigator_no_mappings = 1
