@@ -105,7 +105,7 @@ source ~/.bash_prompt
 
 if [ -z $CONDA_DEFAULT_ENV ];
 then
-  export PATH=/home/aicherc/anaconda2/bin:$PATH;
+  export PATH=/home/aicherc/anaconda3/bin:$PATH;
 fi;
 
 
@@ -125,8 +125,3 @@ export FZF_DEFAULT_OPTS='
   --color info:254,prompt:37,spinner:108,pointer:235,marker:235
 '
 
-
-
-
-
-#

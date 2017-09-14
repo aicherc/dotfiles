@@ -10,9 +10,6 @@ nnoremap <C-L> :nohl<CR><C-L>
 " Toggle Spell Check with <C-T>
 nnoremap <C-T> :setlocal spell! spelllang=en_us<CR>
 
-" Swap with previous buffer
-nnoremap ` <C-^>
-
 " Insert a single character
 nnoremap <leader>i i_<Esc>r
 nnoremap <leader>a a_<Esc>r

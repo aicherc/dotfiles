@@ -2,12 +2,12 @@
 
 " YouCompleteMe Settings (Plug 'Valloric/YouCompleteMe')
 " For conda enviroment compatibility:
-let g:ycm_server_python_interpreter= '/home/aicherc/anaconda2/bin/python'
+let g:ycm_server_python_interpreter= '/home/aicherc/anaconda3/bin/python'
 let g:ycm_python_binary_path = 'python'
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_max_diagnostics_to_display = -1
 autocmd FileType python nnoremap <F2> :YcmCompleter GoTo <CR>
-autocmd FileType python nnoremap <c-?> :YcmCompleter GetDoc <CR>
+autocmd FileType python nnoremap K :YcmCompleter GetDoc <CR>
 let g:ycm_key_invoke_completion = '<C-Space>'
 
 " Pandoc Preferences

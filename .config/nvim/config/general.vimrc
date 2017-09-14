@@ -10,6 +10,7 @@ set hidden
 
 " Command-line completion
 set wildmenu
+set wildmode=longest:full,full
 
 " Show partial commands in last line of screen
 set showcmd
@@ -17,6 +18,8 @@ set showcmd
 " Highligh searches (use <C-L> to turn off highlighting
 set hlsearch
 
+" Set Clipboard to allow copy/paste in linux
+set clipboard=unnamedplus
 
 "-------------------------
 " Usability Options:
@@ -37,8 +40,6 @@ au InsertLeave * hi StatusLine ctermfg=12 ctermbg=0
 
 highlight Cursor ctermbg=12
 
-
-
 " Case insensitive search except when capital letters
 set ignorecase
 set smartcase
@@ -55,6 +56,10 @@ set ruler
 
 " Always display the status line
 set laststatus=2
+set statusline=%<%f         " Path to file
+set statusline+=\ %m        " Indicate if file has changed
+set statusline+=%=          " Append to right Side
+set statusline+=%l,%c       " Row # and Col #
 
 " Raise a dialogue to check if I wish to save changes to a file
 set confirm
@@ -89,6 +94,10 @@ set colorcolumn=81,161,241
 :highlight ExtraWhitespace ctermbg=Brown guibg=Brown
 :match ExtraWhitespace /\s\+\%#\@<!$/
 
+" Wildignore (filetypes to ignore)
+set wildignore+=*.pyc,*.sw?,*.so,*.o,*.exe,*.dll,*.pyo
+
+
 "---------------------------
 " Indent Options
 
@@ -104,7 +113,7 @@ autocmd FileType cpp,cxx,hpp,c,h setlocal shiftwidth=2 softtabstop=2 tabstop=2
 " autocmd FileType hpp setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
 " For tex no smartindent
-autocmd FileType tex setlocal nosmartindent inde=
+autocmd FileType tex setlocal formatoptions= nosmartindent indentexpr=
 
 " For Cython Files
 au BufNewFile,BufRead *.pyx set filetype=python
@@ -122,4 +131,5 @@ autocmd FileType c,cpp,hpp,cxx,h,python,java,php
 " .md files are markdown
 au BufNewFile,BufRead *.md set filetype=markdown
 
-
+" Tex is LaTeX
+let g:tex_flavor='latex'
