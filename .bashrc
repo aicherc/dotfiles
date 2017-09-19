@@ -116,7 +116,7 @@ shopt -s expand_aliases
 ## FZF
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 # Setting ag as the default source for fzf
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore --follow --glob "!.git/*"'
 # To apply the command to CTRL-T as well
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # Color Scheme

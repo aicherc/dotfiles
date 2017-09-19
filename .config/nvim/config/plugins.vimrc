@@ -8,17 +8,15 @@ if !exists('g:deoplete#omni#input_patterns')
 endif
 " tab complete
 inoremap <silent><expr> <TAB>
-		\ pumvisible() ? "\<C-n>" :
-		\ <SID>check_back_space() ? "\<TAB>" :
-		\ deoplete#mappings#manual_complete()
-		function! s:check_back_space() abort "{{{
-		let col = col('.') - 1
-		return !col || getline('.')[col - 1]  =~ '\s'
-		endfunction"}}}
+ 		\ pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" invoke completions on <C-Space>
+" inoremap <silent><expr> <C-Space> deoplete#mappings#manual_complete()
 
 " Jedi Settings
 let g:jedi#completions_enabled = 0 " let deoplete-jedi do completion
 let g:jedi#smart_auto_mappings = 0 " disable automatic typing of `import`
+let g:jedi#max_doc_height = 15
 let g:deoplete#sources#jedi#python_path = 'python'
 
 
@@ -58,6 +56,7 @@ function! LocalNerdTreeToggle()
     endif
 endfunction
 
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.o$']
 let NERDTreeQuitOnOpen=1
 nnoremap <silent> <C-u> :call ProjectNerdTreeToggle()<CR>
 nnoremap <silent> <A-u> :call ProjectNerdTreeToggle()<CR>
@@ -153,15 +152,35 @@ let g:syntastic_mode_map = {
 "   let g:ackprg = 'ag --vimgrep'
 " endif
 
-""" FZF
-"" FZF project files on C-p
-"function! s:find_git_root()
-"  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
-"endfunction
-"command! ProjectFiles execute 'Files' s:find_git_root()
-"nnoremap <silent> <C-p> :ProjectFiles<CR>
-"" FZF buffers on C-b
-"nnoremap <silent> <C-b> :Buffers<CR>
+" FZF
+" FZF project files on C-p
+function! s:find_git_root()
+  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunction
+command! ProjectFiles execute 'FZF' s:find_git_root()
+nnoremap <silent> <C-p> :ProjectFiles<CR>
+" FZF buffers on C-b
+nnoremap <silent> <C-b> :Buffers<CR>
+" Customize FZF colors to match color scheme
+let g:fzf_colors =
+    \ { 'fg':      ['fg', 'Normal'],
+      \ 'bg':      ['bg', 'Normal'],
+      \ 'hl':      ['fg', 'Comment'],
+      \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+      \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+      \ 'hl+':     ['fg', 'Statement'],
+      \ 'info':    ['fg', 'PreProc'],
+      \ 'prompt':  ['fg', 'Conditional'],
+      \ 'pointer': ['fg', 'Exception'],
+      \ 'marker':  ['fg', 'Keyword'],
+      \ 'spinner': ['fg', 'Label'],
+      \ 'header':  ['fg', 'Comment'] }
+let g:fzf_layout = { 'down': '~20%' }
+"let g:fzf_layout = {'window': '10split enew'}
+
+" FZF File Content
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+
 
 """ VimWiki
 "set lazyredraw
@@ -169,25 +188,24 @@ let g:syntastic_mode_map = {
 "nmap <F38> <Plug>VimwikiRemoveHeaderLevel
 
 "" Denite
-" Change default prompt
-call denite#custom#option('default', 'prompt', '>')
-" Change default mappings
-call denite#custom#map('insert','<C-j>','<denite:move_to_next_line>','noremap')
-call denite#custom#map('insert','<C-k>','<denite:move_to_previous_line>','noremap')
-call denite#custom#map('insert','<C-v>','<denite:do_action:vsplit>','noremap')
-call denite#custom#map('insert','<C-t>','<denite:do_action:tabopen>','noremap')
-
-" Search Project Files
-function! s:find_git_root()
-  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
-endfunction
-command DeniteProjectFiles execute ":Denite -path=" .s:find_git_root()
-            \ "-winheight=10" "file_rec"
-nnoremap <silent> <C-p> :DeniteProjectFiles<CR>
-
-" Search buffers
-nnoremap <silent> <C-b> :Denite -winheight=10 buffer<CR>
-
+"" Change default prompt
+"call denite#custom#option('default', 'prompt', '>')
+"" Change default mappings
+"call denite#custom#map('insert','<C-j>','<denite:move_to_next_line>','noremap')
+"call denite#custom#map('insert','<C-k>','<denite:move_to_previous_line>','noremap')
+"call denite#custom#map('insert','<C-v>','<denite:do_action:vsplit>','noremap')
+"call denite#custom#map('insert','<C-t>','<denite:do_action:tabopen>','noremap')
+"
+"" Search Project Files
+"function! s:find_git_root()
+"  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+"endfunction
+"command DeniteProjectFiles execute ":Denite -path=" .s:find_git_root()
+"            \ "-winheight=10" "file_rec"
+"nnoremap <silent> <C-p> :DeniteProjectFiles<CR>
+"
+"" Search buffers
+"nnoremap <silent> <C-b> :Denite -winheight=10 fzf#buffer<CR>
 
 
 " NeoTerm Settings (Plug 'kassio/neoterm')

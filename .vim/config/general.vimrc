@@ -6,7 +6,6 @@ syntax on
 
 " Necesary for lots of cool vim things
 set nocompatible
-
 " Multiple windows
 set hidden
 

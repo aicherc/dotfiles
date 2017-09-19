@@ -21,6 +21,10 @@ set hlsearch
 " Set Clipboard to allow copy/paste in linux
 set clipboard=unnamedplus
 
+" Split below + to right
+set splitbelow
+set splitright
+
 "-------------------------
 " Usability Options:
 
