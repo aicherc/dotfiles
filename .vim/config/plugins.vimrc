@@ -36,6 +36,7 @@ function! LocalNerdTreeToggle()
     endif
 endfunction
 
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.o$']
 let NERDTreeQuitOnOpen=1
 nnoremap <silent> <C-u> :call ProjectNerdTreeToggle()<CR>
 execute "set <M-u>=\eu"
