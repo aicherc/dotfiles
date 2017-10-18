@@ -15,6 +15,9 @@ Plug 'altercation/vim-colors-solarized'
 " nerdtree
 Plug 'scrooloose/nerdtree'
 
+" vim-vinegar
+" Plug 'tpope/vim-vinegar'
+
 " vim-pandoc
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
@@ -45,7 +48,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'Shougo/denite.nvim'
 
 "" Neoterm
-"Plug 'kassio/neoterm'
+Plug 'kassio/neoterm'
 
 " deoplete.nvim 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }

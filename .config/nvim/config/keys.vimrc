@@ -20,12 +20,8 @@ nnoremap j gj
 " Avoid Ctrl-C
 inoremap <C-c> <Nop>
 
-
-
-" NERDTree Shortcut
-nnoremap <C-u> :NERDTreeToggle<CR>
-nnoremap <A-u> :NERDTreeToggle<CR>
-" nnoremap <C-U> :NERDTreeCWD<CR>
+" Map Ctrl-^ (jump to alternate file) to space space
+nnoremap <Space><Space> <C-^>
 
 " Map for ESC
 " imap ;; <Esc>

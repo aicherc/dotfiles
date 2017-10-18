@@ -37,6 +37,10 @@ let g:pandoc#syntax#codeblocks#embeds#langs=["python"]
 
 
 "" NERDTree Preferences
+let NERDTreeMinimalUI=1 " Hide ? for more info
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.o$']
+let NERDTreeQuitOnOpen=1
+
 function! ProjectNerdTreeToggle()
     if exists('t:NERDTreeBufName') && bufwinnr(t:NERDTreeBufName) != -1
         :NERDTreeClose
@@ -51,17 +55,20 @@ function! LocalNerdTreeToggle()
         if bufname("%") == ""
             :NERDTree
         else
+            let l:previous = expand('%:t')
             :NERDTree %
+            call search('\v<' . l:previous . '>')
         endif
     endif
 endfunction
 
-let NERDTreeIgnore=['\~$', '\.pyc$', '\.o$']
-let NERDTreeQuitOnOpen=1
 nnoremap <silent> <C-u> :call ProjectNerdTreeToggle()<CR>
 nnoremap <silent> <A-u> :call ProjectNerdTreeToggle()<CR>
 nnoremap <silent> - :call LocalNerdTreeToggle()<CR>
 
+
+" vim-vinegar / netrw settings
+" TODO
 
 " slimux settings
 " nnoremap <leader>s :SlimuxREPLSendLine<CR>
@@ -70,6 +77,7 @@ nnoremap <silent> - :call LocalNerdTreeToggle()<CR>
 " vnoremap <C-c><C-c> : SlimuxREPLSendSelection<CR>
 " nnoremap <leader>a :SlimuxShellLast<CR>
 " let g:slime_python_ipython = 1
+
 
 " vim-slime settings
 let g:slime_python_ipython = 1
