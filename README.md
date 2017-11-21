@@ -51,8 +51,9 @@ YouCompleteMe also has additional installation steps (see below).
 
 Use vim-plug for NeoVim [link](https://github.com/junegunn/vim-plug/blob/master/plug.vim).
 Open up `nvim` and call `:PlugInstall`.
-YouCompleteMe also has additional installation steps (see below).
+YouCompleteMe also has additional installation steps (see below). (This maybe outdated, I'm switching to jedi).
 
+To copy over ssh use `xclip` [link](https://defuse.ca/blog/clipboard-over-ssh-with-vim.html).
 
 ### YouCompleteMe
 YCM is a code completion engine for Vim and NeoVim.
