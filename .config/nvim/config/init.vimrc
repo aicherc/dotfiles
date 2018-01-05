@@ -25,6 +25,9 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 " YouCompleteMe
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
+" Language Server
+" Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+
 " vim-slime
 Plug 'aicherc/vim-slime'
 

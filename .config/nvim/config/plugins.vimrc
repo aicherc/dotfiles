@@ -19,6 +19,8 @@ let g:jedi#smart_auto_mappings = 0 " disable automatic typing of `import`
 let g:jedi#max_doc_height = 15
 let g:deoplete#sources#jedi#python_path = 'python'
 
+" Language Server Client
+" TODO
 
 "" YouCompleteMe Settings (Plug 'Valloric/YouCompleteMe')
 "" For conda enviroment compatibility:

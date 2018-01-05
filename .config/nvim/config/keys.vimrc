@@ -23,6 +23,10 @@ inoremap <C-c> <Nop>
 " Map Ctrl-^ (jump to alternate file) to space space
 nnoremap <Space><Space> <C-^>
 
+" Map [[ and ]] to jump half page up or down
+nnoremap <C-k> <C-u>
+nnoremap <C-j> <C-d>
+
 " Map for ESC
 " imap ;; <Esc>
 
