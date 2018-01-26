@@ -62,8 +62,12 @@ Plug 'davidhalter/jedi-vim',
 " deoplete-jedi
 Plug 'zchee/deoplete-jedi'
 
+" python folding
+Plug 'tmhedberg/SimpylFold'
+
 " nvim-ipy
 " Plug 'bfredl/nvim-ipy'
+
 
 call plug#end()
 

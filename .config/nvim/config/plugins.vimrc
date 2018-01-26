@@ -32,6 +32,10 @@ let g:deoplete#sources#jedi#python_path = 'python'
 "autocmd FileType python nnoremap K :YcmCompleter GetDoc <CR>
 "let g:ycm_key_invoke_completion = '<C-Space>'
 
+" SimpylFold (python folding options)
+let g:SimpylFold_fold_import=0
+let g:SimpylFold_fold_docstring=0
+
 " Pandoc Preferences
 let g:pandoc#modules#disabled=["folding", "chdir"]
 let g:pandoc#syntax#conceal#use=0

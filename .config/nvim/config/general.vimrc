@@ -97,7 +97,6 @@ set colorcolumn=81,161,241
 " Wildignore (filetypes to ignore)
 set wildignore+=*.pyc,*.sw?,*.so,*.o,*.exe,*.dll,*.pyo
 
-
 "---------------------------
 " Indent Options
 
@@ -116,7 +115,10 @@ autocmd FileType cpp,cxx,hpp,c,h setlocal shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType tex setlocal formatoptions= nosmartindent indentexpr=
 
 " For Cython Files
-au BufNewFile,BufRead *.pyx set filetype=python
+autocmd BufNewFile,BufRead *.pyx set filetype=python
+
+"---------------------------
+autocmd FileType python set nofoldenable
 
 " Strip trailing whitespace in code
 fun! <SID>StripTrailingWhitespaces()

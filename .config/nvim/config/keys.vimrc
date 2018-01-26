@@ -20,7 +20,7 @@ nnoremap j gj
 " Avoid Ctrl-C
 inoremap <C-c> <Nop>
 
-" Map Ctrl-^ (jump to alternate file) to space space
+" Map to open fold
 nnoremap <Space><Space> <C-^>
 
 " Map [[ and ]] to jump half page up or down
