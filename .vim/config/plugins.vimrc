@@ -15,6 +15,9 @@ let g:pandoc#modules#disabled=["folding", "chdir"]
 let g:pandoc#syntax#conceal#use=0
 let g:pandoc#syntax#codeblocks#embeds#langs=["python"]
 
+" SimpylFold (python folding options)
+let g:SimpylFold_fold_import=0
+let g:SimpylFold_fold_docstring=0
 
 "" NERDTree Preferences
 function! ProjectNerdTreeToggle()
@@ -36,6 +39,7 @@ function! LocalNerdTreeToggle()
     endif
 endfunction
 
+let NERDTreeMinimalUI=1 " Hide ? for more info
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.o$']
 let NERDTreeQuitOnOpen=1
 nnoremap <silent> <C-u> :call ProjectNerdTreeToggle()<CR>
@@ -138,15 +142,38 @@ let g:syntastic_mode_map = {
 "   let g:ackprg = 'ag --vimgrep'
 " endif
 
-""" FZF
-"" FZF project files on C-p
-"function! s:find_git_root()
-"  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
-"endfunction
-"command! ProjectFiles execute 'Files' s:find_git_root()
-"nnoremap <silent> <C-p> :ProjectFiles<CR>
-"" FZF buffers on C-b
-"nnoremap <silent> <C-b> :Buffers<CR>
+" FZF
+" FZF project files on C-p
+function! s:find_git_root()
+  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunction
+command! ProjectFiles execute 'FZF' s:find_git_root()
+nnoremap <silent> <C-p> :ProjectFiles<CR>
+" FZF buffers on C-b
+nnoremap <silent> <C-b> :Buffers<CR>
+" FZF history of open files on C-h
+nnoremap <silent> <C-h> :History<CR>
+
+" Customize FZF colors to match color scheme
+let g:fzf_colors =
+    \ { 'fg':      ['fg', 'Normal'],
+      \ 'bg':      ['bg', 'Normal'],
+      \ 'hl':      ['fg', 'Comment'],
+      \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+      \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+      \ 'hl+':     ['fg', 'Statement'],
+      \ 'info':    ['fg', 'PreProc'],
+      \ 'prompt':  ['fg', 'Conditional'],
+      \ 'pointer': ['fg', 'Exception'],
+      \ 'marker':  ['fg', 'Keyword'],
+      \ 'spinner': ['fg', 'Label'],
+      \ 'header':  ['fg', 'Comment'] }
+let g:fzf_layout = { 'down': '~20%' }
+"let g:fzf_layout = {'window': '10split enew'}
+
+" FZF File Content
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+
 
 """ VimWiki
 "set lazyredraw

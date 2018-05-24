@@ -18,9 +18,6 @@ nnoremap <leader>a a_<Esc>r
 nnoremap k gk
 nnoremap j gj
 
-" Map Q for qa
-:command! Q qa
-
 " Map for window traversal
 " nnoremap <M-h> <C-w>h
 " nnoremap <M-j> <C-w>j
@@ -29,6 +26,13 @@ nnoremap j gj
 
 " Avoid Ctrl-C
 inoremap <C-c> <Nop>
+
+" Map to open fold
+nnoremap <Space><Space> <C-^>
+
+" Map [[ and ]] to jump half page up or down
+nnoremap <C-k> <C-u>
+nnoremap <C-j> <C-d>
 
 " Jump shortcuts
 nnoremap <A-o> <C-o>

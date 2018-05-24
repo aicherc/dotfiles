@@ -3,12 +3,15 @@
 
 " Deoplete Settings
 let g:deoplete#enable_at_startup = 1
-if !exists('g:deoplete#omni#input_patterns')
-  let g:deoplete#omni#input_patterns = {}
-endif
+call deoplete#custom#option('num_processes', 0)
+"if !exists('g:deoplete#omni#input_patterns')
+"  let g:deoplete#omni#input_patterns = {}
+"endif
 " tab complete
 inoremap <silent><expr> <TAB>
  		\ pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <silent><expr> <S-TAB>
+ 		\ pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
 " invoke completions on <C-Space>
 " inoremap <silent><expr> <C-Space> deoplete#mappings#manual_complete()
@@ -74,7 +77,7 @@ nnoremap <silent> - :call LocalNerdTreeToggle()<CR>
 
 
 " vim-vinegar / netrw settings
-" TODO
+" let g:netrw_banner = 0
 
 " slimux settings
 " nnoremap <leader>s :SlimuxREPLSendLine<CR>
@@ -96,7 +99,7 @@ let g:slime_no_mappings = 1
 autocmd FileType python xmap <silent> <leader>s <Plug>SlimeRegionSend
 autocmd FileType python nmap <silent> <leader>s <Plug>SlimeMotionSend
 autocmd FileType python nmap <silent> <leader>ss <Plug>SlimeLineSend
-autocmd FileType python xmap <silent> <c-c><c-c> :SlimeSend<CR>
+autocmd FileType python xmap <silent> <c-c><c-c> :SlimeSend<CR>`>
 autocmd FileType python nmap <silent> <c-c><c-c> :SlimeSendCurrentLine<CR> +
 autocmd FileType python nmap <silent> <c-c>v     :SlimeConfig
 "autocmd FileType python nmap <silent> <c-c><c-h> l?#%\\|\%^<CR>0v/#%\\|\%$<CR><CR><c-c><c-c>/#%\\|\%$<CR>:noh<CR>
@@ -175,6 +178,9 @@ command! ProjectFiles execute 'FZF' s:find_git_root()
 nnoremap <silent> <C-p> :ProjectFiles<CR>
 " FZF buffers on C-b
 nnoremap <silent> <C-b> :Buffers<CR>
+" FZF history of open files on C-h
+nnoremap <silent> <C-h> :History<CR>
+
 " Customize FZF colors to match color scheme
 let g:fzf_colors =
     \ { 'fg':      ['fg', 'Normal'],
@@ -228,8 +234,10 @@ command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-h
 "autocmd FileType python vnoremap <C-c><C-c> "+y :T paste<CR>
 "nnoremap <A-n> :Ttoggle<CR>
 "tnoremap <A-n> <C-\><C-n>:Ttoggle<CR>
+let g:neoterm_default_mod = 'tab'
 
-
+" tex-fold settings (Plug 'matze/vim-tex-fold')
+" let g:tex_fold_sec_char = '>'
 
 
 

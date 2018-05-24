@@ -36,7 +36,7 @@ Plug 'vim-syntastic/syntastic'
 
 "" fzf.vim
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-"Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'
 
 " vimwiki
 " Plug 'vimwiki/vimwiki'
@@ -44,6 +44,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Denite
 Plug 'Shougo/denite.nvim'
 
+" python folding
+Plug 'tmhedberg/SimpylFold'
 
 
 " End of Pluggins

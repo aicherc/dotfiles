@@ -13,9 +13,8 @@ nnoremap <C-T> :setlocal spell! spelllang=en_us<CR>
 " Long wrapped line movement
 nnoremap k gk
 nnoremap j gj
-
-" Map Q for qa
-:command! Q qa
+"vnoremap k gk
+"vnoremap j gj
 
 " Avoid Ctrl-C
 inoremap <C-c> <Nop>
@@ -63,4 +62,10 @@ autocmd FileType tex setlocal textwidth=79
 
 " Markdown Shortcuts
 autocmd FileType markdown nnoremap <buffer> <silent> <F6> :w! \| :! google-chrome --new-window %:p <CR> \| :lcd - <CR>
+
+" SSH Shortcuts for xclip
+" vnoremap "-y :!xclip -f -sel clip <CR>
+" vnoremap "-p :r!xclip -o -sel clip <CR>
+
+
 

@@ -15,8 +15,8 @@ Plug 'altercation/vim-colors-solarized'
 " nerdtree
 Plug 'scrooloose/nerdtree'
 
-" vim-vinegar
-" Plug 'tpope/vim-vinegar'
+"" vim-vinegar
+"Plug 'tpope/vim-vinegar'
 
 " vim-pandoc
 Plug 'vim-pandoc/vim-pandoc'
@@ -65,8 +65,14 @@ Plug 'zchee/deoplete-jedi'
 " python folding
 Plug 'tmhedberg/SimpylFold'
 
-" nvim-ipy
+"" latex folding
+"Plug 'matze/vim-tex-fold'
+
+"" nvim-ipy
 " Plug 'bfredl/nvim-ipy'
+
+"" vyzyv vimpyter
+" Plug 'vyzyv/vimpyter'
 
 
 call plug#end()

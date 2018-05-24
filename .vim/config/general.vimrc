@@ -139,9 +139,10 @@ autocmd FileType cpp,cxx,hpp,c,h setlocal shiftwidth=2 softtabstop=2 tabstop=2
 " For tex no smartindent
 autocmd FileType tex setlocal nosmartindent inde=
 
-
 " For Cython Files
 au BufNewFile,BufRead *.pyx,*.ipy set filetype=python
+
+autocmd FileType python,tex set nofoldenable
 
 " Strip trailing whitespace in code
 fun! <SID>StripTrailingWhitespaces()

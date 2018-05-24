@@ -118,7 +118,7 @@ autocmd FileType tex setlocal formatoptions= nosmartindent indentexpr=
 autocmd BufNewFile,BufRead *.pyx set filetype=python
 
 "---------------------------
-autocmd FileType python set nofoldenable
+autocmd FileType python,tex set nofoldenable
 
 " Strip trailing whitespace in code
 fun! <SID>StripTrailingWhitespaces()
