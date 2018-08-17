@@ -21,6 +21,7 @@ let g:jedi#completions_enabled = 0 " let deoplete-jedi do completion
 let g:jedi#smart_auto_mappings = 0 " disable automatic typing of `import`
 let g:jedi#max_doc_height = 15
 let g:deoplete#sources#jedi#python_path = 'python'
+let g:deoplete#sources#jedi#server_timeout = 60
 
 " Language Server Client
 " TODO
@@ -199,7 +200,12 @@ let g:fzf_layout = { 'down': '~20%' }
 "let g:fzf_layout = {'window': '10split enew'}
 
 " FZF File Content
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+command! -bang -nargs=* Rg
+      \ call fzf#vim#grep(
+      \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+      \   <bang>0 ? fzf#vim#with_preview('up:60%')
+      \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+      \   <bang>0)
 
 
 """ VimWiki
@@ -239,5 +245,27 @@ let g:neoterm_default_mod = 'tab'
 " tex-fold settings (Plug 'matze/vim-tex-fold')
 " let g:tex_fold_sec_char = '>'
 
+""--------------------
+" vimtex settings
+""--------------------
+let g:vimtex_compiler_progname = 'nvr' "for neovim --remote compatibility
+let g:vimtex_matchparen_enabled = 0
+" let g:vimtex_quickfix_method = 
+
+"let g:vimtex_fold_enabled=1
+"let g:vimtex_fold_manual=1
+"let g:vimtex_fold_types = {
+"    \ 'envs' : {'enabled' : 0},
+"    \}
+
+if !exists('g:deoplete#omni#input_patterns')
+    let g:deoplete#omni#input_patterns = {}
+endif
+let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
+autocmd FileType tex nnoremap <buffer> <silent> <A-i> :VimtexTocToggle <CR>
+autocmd FileType tex nnoremap <buffer> <silent> <F4> :VimtexStopAll <CR>
+autocmd FileType tex nnoremap <buffer> <silent> <F5> :VimtexCompile <CR>
+autocmd FileType tex nnoremap <buffer> <silent> <F6> :VimtexView <CR>
+autocmd FileType tex nnoremap <buffer> <silent> <F7> :VimtexClean <CR>
 
 

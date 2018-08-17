@@ -74,6 +74,8 @@ Plug 'tmhedberg/SimpylFold'
 "" vyzyv vimpyter
 " Plug 'vyzyv/vimpyter'
 
+" vimtex
+Plug 'lervag/vimtex'
 
 call plug#end()
 

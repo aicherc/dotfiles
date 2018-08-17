@@ -4,9 +4,9 @@
 alias gitdot='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 # Command for ssh to desktop
-alias sshspc178='ssh -A -t aicherc@ssh.stat.washington.edu ssh aicherc@spc178.stat.washington.edu'
-alias sshspc178X11='ssh -X aicherc@spc178.stat.washington.edu'
-alias sshspc178Port9999='ssh -N -f -L 127.0.0.1:9999:127.0.0.1:9999 aicherc@spc178.stat.washington.edu'
+#alias sshspc178='ssh -A -t aicherc@ssh.stat.washington.edu ssh aicherc@spc178.stat.washington.edu'
+#alias sshspc178X11='ssh -X aicherc@spc178.stat.washington.edu'
+#alias sshspc178Port9999='ssh -N -f -L 127.0.0.1:9999:127.0.0.1:9999 aicherc@spc178.stat.washington.edu'
 
 alias sshspc128='ssh -A -t aicherc@ssh.stat.washington.edu ssh aicherc@spc128.stat.washington.edu'
 alias sshspc128X11='ssh -X aicherc@spc128.stat.washington.edu'

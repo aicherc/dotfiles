@@ -20,7 +20,7 @@ nnoremap j gj
 inoremap <C-c> <Nop>
 
 " Map to open fold
-nnoremap <Space><Space> <C-^>
+" nnoremap <Space><Space> <C-^>
 
 " Map [[ and ]] to jump half page up or down
 nnoremap <C-k> <C-u>
@@ -53,10 +53,10 @@ nnoremap <A-o> <C-o>
 nnoremap <A-i> <C-i>
 
 "---------------------------
-" LaTeX Shortcuts
-autocmd FileType tex nnoremap <buffer> <silent> <F5> :w! \| :lcd %:p:h \| :T pdflatex -synctex=1 -interaction=nonstopmode %:r.tex <CR> \| :lcd - <CR>
-autocmd FileType tex nnoremap <buffer> <silent> <F6> :! evince %:r.pdf > /dev/null 2>&1 & <CR><CR>
-autocmd FileType tex nnoremap <buffer> <silent> <F7> :w! \| :lcd %:p:h \| :T bibtex %:r.aux <CR> \| :lcd - <CR>
+" LaTeX Shortcuts -> Use vimtex
+"autocmd FileType tex nnoremap <buffer> <silent> <F5> :w! \| :lcd %:p:h \| :T pdflatex -synctex=1 -interaction=nonstopmode %:r.tex <CR> \| :lcd - <CR>
+"autocmd FileType tex nnoremap <buffer> <silent> <F6> :! evince %:r.pdf > /dev/null 2>&1 & <CR><CR>
+"autocmd FileType tex nnoremap <buffer> <silent> <F7> :w! \| :lcd %:p:h \| :T bibtex %:r.aux <CR> \| :lcd - <CR>
 autocmd FileType tex setlocal spell spelllang=en_us
 autocmd FileType tex setlocal textwidth=79
 

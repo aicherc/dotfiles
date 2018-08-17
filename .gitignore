@@ -27,6 +27,11 @@
 *.bbl
 *.bcf
 *.blg
+#
+# LaTeXmk Files #
+############################
+*.fdb_latexmk
+*.fls
 
 # packages #
 ############
