@@ -337,33 +337,34 @@ c.TerminalInteractiveShell.editor = 'vim'
 # c.TerminalInteractiveShell.prompts_class = 'IPython.terminal.prompts.Prompts'
 
 # Custom - Christopher Aicher
-from IPython.terminal.prompts import Prompts, Token
-from prompt_toolkit.key_binding.vi_state import InputMode
+import IPython
+if IPython.version_info[0] < 7:
+    from IPython.terminal.prompts import Prompts, Token
+    from prompt_toolkit.key_binding.vi_state import InputMode
 
+    class MyPrompts(Prompts):
+        def in_prompt_tokens(self, cli=None):
+            mode = 'ins' if cli.vi_state.input_mode == InputMode.INSERT else 'cmd'
+            return [
+                (Token.Prompt, '(%s)In [' % mode),
+                (Token.PromptNum, str(self.shell.execution_count)),
+                (Token.Prompt, ']: ')
+            ]
+        def rprompt_tokens(self, cli=None):
+            if cli.vi_state.input_mode == InputMode.INSERT:
+                mode = "-- INSERT --"
+            else:
+                mode = "-- CMD --"
+            return [(Token.RPrompt, mode)]
 
-class MyPrompts(Prompts):
-    def in_prompt_tokens(self, cli=None):
-        mode = 'ins' if cli.vi_state.input_mode == InputMode.INSERT else 'cmd'
-        return [
-            (Token.Prompt, '(%s)In [' % mode),
-            (Token.PromptNum, str(self.shell.execution_count)),
-            (Token.Prompt, ']: ')
-        ]
-    def rprompt_tokens(self, cli=None):
-        if cli.vi_state.input_mode == InputMode.INSERT:
-            mode = "-- INSERT --"
-        else:
-            mode = "-- CMD --"
-        return [(Token.RPrompt, mode)]
+        def bottom_toolbar_tokens(self, cli=None):
+            if cli.vi_state.input_mode == InputMode.INSERT:
+                mode = "-- INSERT --"
+            else:
+                mode = "-- CMD --"
+            return [(Token.Toolbar, mode)]
 
-    def bottom_toolbar_tokens(self, cli=None):
-        if cli.vi_state.input_mode == InputMode.INSERT:
-            mode = "-- INSERT --"
-        else:
-            mode = "-- CMD --"
-        return [(Token.Toolbar, mode)]
-
-c.TerminalInteractiveShell.prompts_class = MyPrompts
+    c.TerminalInteractiveShell.prompts_class = MyPrompts
 
 
 

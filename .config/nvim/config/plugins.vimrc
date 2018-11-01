@@ -258,11 +258,13 @@ let g:vimtex_matchparen_enabled = 0
 "    \ 'envs' : {'enabled' : 0},
 "    \}
 
+let g:vimtex_toc_config = {'layer_status': {'content': 1, 'label': 0, 'todo': 0, 'include': 1}}
+
 if !exists('g:deoplete#omni#input_patterns')
     let g:deoplete#omni#input_patterns = {}
 endif
 let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
-autocmd FileType tex nnoremap <buffer> <silent> <A-i> :VimtexTocToggle <CR>
+autocmd FileType tex nnoremap <buffer> <silent> <A-i> :VimtexTocOpen <CR>
 autocmd FileType tex nnoremap <buffer> <silent> <F4> :VimtexStopAll <CR>
 autocmd FileType tex nnoremap <buffer> <silent> <F5> :VimtexCompile <CR>
 autocmd FileType tex nnoremap <buffer> <silent> <F6> :VimtexView <CR>
