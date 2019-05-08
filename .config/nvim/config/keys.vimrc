@@ -9,6 +9,7 @@ nnoremap <C-L> :nohl<CR><C-L>
 
 " Toggle Spell Check with <C-T>
 nnoremap <C-T> :setlocal spell! spelllang=en_us<CR>
+hi SpellBad cterm=underline
 
 " Long wrapped line movement
 nnoremap k gk
@@ -46,6 +47,7 @@ nnoremap <C-j> <C-d>
 "nnoremap <A-j> <C-w>j
 "nnoremap <A-k> <C-w>k
 "nnoremap <A-l> <C-w>l
+nnoremap <C-w>t :tab split<CR>
 
 
 " Jump shortcuts

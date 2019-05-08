@@ -36,6 +36,9 @@ let g:deoplete#sources#jedi#server_timeout = 60
 "autocmd FileType python nnoremap K :YcmCompleter GetDoc <CR>
 "let g:ycm_key_invoke_completion = '<C-Space>'
 
+" FastFold
+let g:fastfold_minlines = 0
+
 " SimpylFold (python folding options)
 let g:SimpylFold_fold_import=0
 let g:SimpylFold_fold_docstring=0
@@ -97,13 +100,13 @@ if exists('$TMUX')
     let g:slime_dont_ask_default = 1
 endif
 let g:slime_no_mappings = 1
-autocmd FileType python xmap <silent> <leader>s <Plug>SlimeRegionSend
-autocmd FileType python nmap <silent> <leader>s <Plug>SlimeMotionSend
-autocmd FileType python nmap <silent> <leader>ss <Plug>SlimeLineSend
-autocmd FileType python xmap <silent> <c-c><c-c> :SlimeSend<CR>`>
-autocmd FileType python nmap <silent> <c-c><c-c> :SlimeSendCurrentLine<CR> +
-autocmd FileType python nmap <silent> <c-c>v     :SlimeConfig
-"autocmd FileType python nmap <silent> <c-c><c-h> l?#%\\|\%^<CR>0v/#%\\|\%$<CR><CR><c-c><c-c>/#%\\|\%$<CR>:noh<CR>
+xmap <silent> <leader>s <Plug>SlimeRegionSend
+nmap <silent> <leader>s <Plug>SlimeMotionSend
+nmap <silent> <leader>ss <Plug>SlimeLineSend
+xmap <silent> <c-c><c-c> :SlimeSend<CR>`>
+nmap <silent> <c-c><c-c> :SlimeSendCurrentLine<CR> +
+nmap <silent> <c-c>v     :SlimeConfig
+"autocmd nmap <silent> <c-c><c-h> l?#%\\|\%^<CR>0v/#%\\|\%$<CR><CR><c-c><c-c>/#%\\|\%$<CR>:noh<CR>
 
 " vim-tmux-navigator
 let g:tmux_navigator_no_mappings = 1

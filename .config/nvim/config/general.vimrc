@@ -30,8 +30,8 @@ if !has("gui_running")
     let g:solarized_termtrans=1
 endif
 
-colorscheme solarized
 set background=dark
+colorscheme solarized
 
 " for gnome-terminal
 " now set it up to change the status line based on mode

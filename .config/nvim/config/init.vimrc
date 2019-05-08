@@ -28,6 +28,9 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 " Language Server
 " Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 
+" iron-nvim (REPL)
+" Plug 'Vigemus/iron.nvim'
+
 " vim-slime
 Plug 'aicherc/vim-slime'
 
@@ -61,6 +64,9 @@ Plug 'davidhalter/jedi-vim',
 
 " deoplete-jedi
 Plug 'zchee/deoplete-jedi'
+
+" Fast Folding
+Plug 'Konfekt/FastFold'
 
 " python folding
 Plug 'tmhedberg/SimpylFold'
