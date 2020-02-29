@@ -108,6 +108,7 @@ c.NotebookApp.browser = u'/usr/bin/firefox'
 
 # The notebook manager class to use.
 # c.NotebookApp.contents_manager_class = 'notebook.services.contents.filemanager.FileContentsManager'
+c.NotebookApp.contents_manager_class = "jupytext.TextFileContentsManager"
 
 # Extra keyword arguments to pass to `set_secure_cookie`. See tornado's
 # set_secure_cookie docs for details.
@@ -585,18 +586,18 @@ c.NotebookApp.browser = u'/usr/bin/firefox'
 #
 #c.FileContentsManager.post_save_hook = script_post_save
 
-# Save HTML Version
-import os
-from subprocess import check_call
-def post_save(model, os_path, contents_manager):
-    """post-save hook for converting notebooks to .py scripts"""
-    if model['type'] != 'notebook':
-        return # only do this for notebooks
-    d, fname = os.path.split(os_path)
-    check_call(['jupyter', 'nbconvert', '--to', 'html', fname], cwd=d)
-    check_call(['jupyter', 'nbconvert', '--to', 'python', fname], cwd=d)
-
-c.FileContentsManager.post_save_hook = post_save
+## Save HTML Version
+#import os
+#from subprocess import check_call
+#def post_save(model, os_path, contents_manager):
+#    """post-save hook for converting notebooks to .py scripts"""
+#    if model['type'] != 'notebook':
+#        return # only do this for notebooks
+#    d, fname = os.path.split(os_path)
+#    check_call(['jupyter', 'nbconvert', '--to', 'html', fname], cwd=d)
+#    check_call(['jupyter', 'nbconvert', '--to', 'python', fname], cwd=d)
+#
+#c.FileContentsManager.post_save_hook = post_save
 
 #------------------------------------------------------------------------------
 # NotebookNotary configuration

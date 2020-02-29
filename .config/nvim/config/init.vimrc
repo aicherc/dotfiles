@@ -51,10 +51,10 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " Denite
-Plug 'Shougo/denite.nvim'
+" Plug 'Shougo/denite.nvim'
 
 "" Neoterm
-Plug 'kassio/neoterm'
+" Plug 'kassio/neoterm'
 
 " deoplete.nvim 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -82,6 +82,12 @@ Plug 'tmhedberg/SimpylFold'
 
 " vimtex
 Plug 'lervag/vimtex'
+
+" tagbar (requires universal ctags to be installed)
+Plug 'majutsushi/tagbar'
+
+" Tag Managment
+Plug 'ludovicchabant/vim-gutentags'
 
 call plug#end()
 

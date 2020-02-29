@@ -23,9 +23,6 @@ let g:jedi#max_doc_height = 15
 let g:deoplete#sources#jedi#python_path = 'python'
 let g:deoplete#sources#jedi#server_timeout = 60
 
-" Language Server Client
-" TODO
-
 "" YouCompleteMe Settings (Plug 'Valloric/YouCompleteMe')
 "" For conda enviroment compatibility:
 "let g:ycm_server_python_interpreter= '/home/aicherc/anaconda2/bin/python'
@@ -236,6 +233,14 @@ command! -bang -nargs=* Rg
 "" Search buffers
 "nnoremap <silent> <C-b> :Denite -winheight=10 fzf#buffer<CR>
 
+"" tagbar
+autocmd FileType python,cpp,cxx,hpp,c,h,markdown 
+    \ nnoremap <silent> <A-i> :TagbarToggle<CR>
+let g:tagbar_map_zoomwin = "A"
+
+"" gutentags
+let g:gutentags_cache_dir = expand('~/.cache/tags/')
+
 
 " NeoTerm Settings (Plug 'kassio/neoterm')
 "autocmd FileType python nnoremap <F10> :%y+<CR> :T paste<CR>
@@ -243,7 +248,7 @@ command! -bang -nargs=* Rg
 "autocmd FileType python vnoremap <C-c><C-c> "+y :T paste<CR>
 "nnoremap <A-n> :Ttoggle<CR>
 "tnoremap <A-n> <C-\><C-n>:Ttoggle<CR>
-let g:neoterm_default_mod = 'tab'
+" let g:neoterm_default_mod = 'tab'
 
 " tex-fold settings (Plug 'matze/vim-tex-fold')
 " let g:tex_fold_sec_char = '>'
@@ -253,7 +258,7 @@ let g:neoterm_default_mod = 'tab'
 ""--------------------
 let g:vimtex_compiler_progname = 'nvr' "for neovim --remote compatibility
 let g:vimtex_matchparen_enabled = 0
-" let g:vimtex_quickfix_method = 
+" let g:vimtex_quickfix_method =
 
 "let g:vimtex_fold_enabled=1
 "let g:vimtex_fold_manual=1
